@@ -1,6 +1,10 @@
-/* Configure genuine customer reviews here after the Google Business Profile review source is connected.
-   The site intentionally renders ONLY reviews whose numeric rating is exactly 5. */
+/* Aksharas website configuration. */
 window.AKSHARAS_CONFIG = {
   orderUrl: 'https://crossroads.dotpe.in',
+  branchPhones: {
+    Porur: '+919677186207',
+    Perumbakkam: '+918870716392',
+    Madipakkam: '+918925534939'
+  },
   reviews: []
 };

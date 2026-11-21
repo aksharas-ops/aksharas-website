@@ -32,3 +32,12 @@ The enquiry dialog prepares a WhatsApp message using the configured number in `s
 
 ## Production safety
 Keep the existing Aksharas Ops Worker and production domain unchanged while testing this staging website.
+
+
+## Branch contact numbers (updated)
+
+- Porur: +91-9677186207
+- Perumbakkam: +91-8870716392
+- Madipakkam: +91-8925534939
+
+The branch Call buttons use these numbers. Party-order enquiries are directed to the WhatsApp number for the branch selected in the enquiry form.

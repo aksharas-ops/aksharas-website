@@ -49,7 +49,9 @@
     e.preventDefault();
     const data = Object.fromEntries(new FormData(e.currentTarget).entries());
     const body = `Party Order Enquiry\nName: ${data.name}\nMobile: ${data.phone}\nEvent: ${data.event}\nBranch: ${data.branch}\nDate: ${data.date}\nGuests: ${data.guests}\nDetails: ${data.details || 'Not provided'}`;
-    const url = `https://wa.me/918925534938?text=${encodeURIComponent(body)}`;
+    const branchPhones = window.AKSHARAS_CONFIG?.branchPhones || {};
+    const destination = branchPhones[data.branch] || branchPhones.Porur || '+919677186207';
+    const url = `https://wa.me/${destination.replace(/\D/g, '')}?text=${encodeURIComponent(body)}`;
     window.open(url, '_blank', 'noopener');
     dialog.close();
   });
