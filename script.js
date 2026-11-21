@@ -1,60 +1,40 @@
-const config = window.AKSHARAS_CONFIG || {};
-const nav = document.querySelector('.main-nav');
-const toggle = document.querySelector('.menu-toggle');
-toggle?.addEventListener('click', () => {
-  const open = nav.classList.toggle('open');
-  toggle.setAttribute('aria-expanded', String(open));
-  toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
-});
-nav?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-  nav.classList.remove('open'); toggle?.setAttribute('aria-expanded', 'false');
-}));
-document.getElementById('year').textContent = new Date().getFullYear();
-if (config.orderUrl) document.querySelectorAll('a[href="https://crossroads.dotpe.in"]').forEach(a => a.href = config.orderUrl);
+(() => {
+  const toggle = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('.nav');
+  toggle?.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+  nav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
 
-const dialog = document.getElementById('enquiry-dialog');
-document.getElementById('open-enquiry')?.addEventListener('click', () => dialog.showModal());
-document.querySelector('.dialog-close')?.addEventListener('click', () => dialog.close());
-dialog?.addEventListener('click', e => { if (e.target === dialog) dialog.close(); });
-const form = document.getElementById('party-form');
-form?.addEventListener('submit', async e => {
-  e.preventDefault();
-  if (!form.reportValidity()) return;
-  const payload = Object.fromEntries(new FormData(form).entries());
-  const endpoint = config.partyEnquiryEndpoint;
-  if (!endpoint) {
-    alert('The enquiry form design is ready. Connect the secure enquiry endpoint before accepting live submissions.');
-    return;
-  }
-  const submit = form.querySelector('button[type="submit"]');
-  submit.disabled = true; submit.textContent = 'Submitting…';
-  try {
-    const response = await fetch(endpoint, { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(payload) });
-    if (!response.ok) throw new Error('Request failed');
-    alert('Thank you! Your party enquiry has been submitted.'); form.reset(); dialog.close();
-  } catch (err) { alert('We could not submit your enquiry. Please call +91 89255 34938.'); }
-  finally { submit.disabled = false; submit.innerHTML = 'Review Enquiry <span>→</span>'; }
-});
+  const dialog = document.getElementById('enquiry-dialog');
+  document.querySelectorAll('[data-open-enquiry]').forEach(btn => btn.addEventListener('click', () => dialog.showModal()));
+  document.querySelector('.close-dialog')?.addEventListener('click', () => dialog.close());
+  dialog?.addEventListener('click', e => { if (e.target === dialog) dialog.close(); });
 
-async function loadFiveStarReviews() {
-  const target = document.getElementById('reviews-list');
-  if (!config.reviewsEndpoint) return; // No invented/sample reviews are displayed.
-  try {
-    const response = await fetch(config.reviewsEndpoint, { headers: { 'Accept': 'application/json' } });
-    if (!response.ok) throw new Error('Could not load reviews');
-    const data = await response.json();
-    const reviews = (Array.isArray(data) ? data : data.reviews || []).filter(r => Number(r.rating) === 5 && String(r.text || r.comment || '').trim());
-    if (!reviews.length) { target.innerHTML = '<div class="reviews-empty">Customer feedback will appear here when verified five-star comments are available.</div>'; return; }
-    target.innerHTML = '';
-    reviews.slice(0, 6).forEach(review => {
+  const reviews = (window.AKSHARAS_CONFIG?.reviews || []).filter(r => Number(r.rating) === 5 && String(r.comment || r.text || '').trim());
+  const grid = document.getElementById('review-grid');
+  const empty = document.getElementById('review-empty');
+  if (reviews.length) {
+    reviews.slice(0, 3).forEach(r => {
       const card = document.createElement('article'); card.className = 'review-card';
       const stars = document.createElement('div'); stars.className = 'review-stars'; stars.textContent = '★★★★★';
-      const quote = document.createElement('blockquote'); quote.textContent = review.text || review.comment;
-      const author = document.createElement('div'); author.className = 'review-author'; author.textContent = review.author || review.authorName || 'Customer';
-      card.append(stars, quote, author); target.append(card);
+      const quote = document.createElement('p'); quote.className = 'review-quote'; quote.textContent = `“${r.comment || r.text}”`;
+      card.append(stars, quote);
+      if (r.author) { const author = document.createElement('small'); author.textContent = r.author; card.append(author); }
+      grid.append(card);
     });
-  } catch (error) {
-    target.innerHTML = '<div class="reviews-empty">Customer testimonials are temporarily unavailable.</div>';
+    empty.hidden = true;
+  } else {
+    empty.textContent = 'Customer testimonials will appear here once verified five-star reviews are connected.';
   }
-}
-loadFiveStarReviews();
+
+  document.getElementById('party-form')?.addEventListener('submit', e => {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(e.currentTarget).entries());
+    const body = `Party Order Enquiry\nName: ${data.name}\nMobile: ${data.phone}\nEvent: ${data.event}\nBranch: ${data.branch}\nDate: ${data.date}\nGuests: ${data.guests}\nDetails: ${data.details || 'Not provided'}`;
+    const url = `https://wa.me/918925534938?text=${encodeURIComponent(body)}`;
+    window.open(url, '_blank', 'noopener');
+    dialog.close();
+  });
+})();

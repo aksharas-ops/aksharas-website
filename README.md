@@ -1,45 +1,21 @@
-# Aksharas Veg Restaurant — staging website
+# Aksharas Veg Restaurant – Prototype-matched staging website
 
-A responsive static website prototype using the approved Aksharas design direction and the supplied company logo.
+This revision recreates the supplied 1024 × 1536 approved homepage mockup: header, split hero, green benefits strip, five menu cards, party banner, four speciality cards, testimonials, three branch cards and dark-green footer.
 
-## Preview locally
+## Deploy
+- Static site; no build command required.
+- Upload the contents of this folder to the root of the `aksharas-website` GitHub repository.
+- Cloudflare Pages: framework preset `None`; build command blank; output directory `/` (or `.` depending on the Pages UI).
+- Do not change or overwrite the existing `aksharas-ops` Worker.
 
-You can open `index.html` directly in a browser. For a local web server, run:
+## Assets
+The food and restaurant images in `assets/` are crops taken from the approved prototype screenshot so the staging page preserves the same pictured visuals. The primary logo is the supplied Aksharas logo file.
 
-```bash
-python -m http.server 8080
-```
+## Reviews
+`config.js` accepts verified review records. `script.js` strictly renders only entries with `rating === 5` and a non-empty comment. No sample or invented testimonials are included. Connect the Google Business Profile review source before populating this list.
 
-Then visit `http://localhost:8080`.
+## Party enquiry
+The prototype form opens a WhatsApp message to the restaurant number currently shown on the existing website. Confirm this is the correct party enquiry number before launch. A database-backed enquiry workflow can replace this after Supabase is configured.
 
-## Deploy as a staging site on Cloudflare Pages
-
-1. Create a new Git repository (for example `aksharas-website-staging`) and upload the contents of this folder.
-2. In Cloudflare, open **Workers & Pages → Create → Pages → Connect to Git**.
-3. Select the repository.
-4. Framework preset: **None**. Build command: leave blank. Build output directory: `/` (repository root).
-5. Deploy. Cloudflare will provide a staging `*.pages.dev` URL.
-6. Test desktop/mobile layouts, links, images, and enquiry flow before changing the production domain.
-
-Do not change the DNS for `aksharasveg.com` until the staging site is approved.
-
-## Configuration still required before launch
-
-Edit `config.js`:
-
-- `orderUrl`: currently set to the existing ordering link found on the current website (`https://crossroads.dotpe.in`). Confirm whether this is the correct ordering destination for all three branches.
-- `reviewsEndpoint`: secure server endpoint returning Google reviews. The frontend filters again and renders **only rating === 5**. No sample/fabricated reviews are included.
-- `partyEnquiryEndpoint`: secure server endpoint to validate and store party enquiries. The form is designed but does not store submissions until this is configured.
-
-Never put Google private keys, service-account JSON, or other secrets in browser JavaScript. Use a server-side function/proxy for Google reviews and form submission.
-
-## Content verification before launch
-
-- Confirm branch addresses, phone numbers, opening hours, map pins and ordering destinations for Porur, Perumbakkam and Madipakkam.
-- The current live website lists +91 89255 34938, the Perumbakkam address (Ground floor, Srishti Arcade, Nookampalayam, Perumbakkam, Chennai), and the existing DotPe ordering URL. Verify these are still current.
-- Food and restaurant photography in this prototype is loaded from Unsplash. Replace with approved Aksharas-owned photographs before production.
-- Add the final approved legal/footer details and social profile URLs.
-
-## Notes
-
-This is a staging-ready front-end prototype, not a deployed live website. Google reviews and party enquiry storage require server-side endpoints and credentials/configuration. No changes have been made to the live website or its DNS.
+## Before public launch
+Verify branch phone numbers, map pins, official ordering links, Google review integration, and mobile display. The `Gallery` navigation anchor is retained for visual parity; a dedicated gallery page/section can be added in the next iteration.
