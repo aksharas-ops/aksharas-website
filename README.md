@@ -19,3 +19,11 @@ The prototype form opens a WhatsApp message to the restaurant number currently s
 
 ## Before public launch
 Verify branch phone numbers, map pins, official ordering links, Google review integration, and mobile display. The `Gallery` navigation anchor is retained for visual parity; a dedicated gallery page/section can be added in the next iteration.
+
+
+## V3 visual corrections
+- Fixed the speciality card markup so the intended card image and label styling applies.
+- Reduced the vertical gap between the hero description and action buttons.
+- Tightened the Party Orders banner layout to remove unnecessary vertical whitespace.
+- Adjusted branch image framing to keep the restaurant sign visible.
+- Preserved the approved brand colours, imagery, logo and page structure.
