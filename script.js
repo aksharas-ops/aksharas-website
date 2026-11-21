@@ -5,10 +5,26 @@
     const open = nav.classList.toggle('open');
     toggle.setAttribute('aria-expanded', String(open));
   });
-  nav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+  nav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    nav.classList.remove('open');
+    toggle?.setAttribute('aria-expanded', 'false');
+  }));
+  document.addEventListener('click', e => {
+    if (!nav || !toggle || !nav.classList.contains('open')) return;
+    if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 1120 && nav?.classList.contains('open')) {
+      nav.classList.remove('open');
+      toggle?.setAttribute('aria-expanded', 'false');
+    }
+  });
 
   const dialog = document.getElementById('enquiry-dialog');
-  document.querySelectorAll('[data-open-enquiry]').forEach(btn => btn.addEventListener('click', () => dialog.showModal()));
+  document.querySelectorAll('[data-open-enquiry]').forEach(btn => btn.addEventListener('click', () => dialog?.showModal()));
   document.querySelector('.close-dialog')?.addEventListener('click', () => dialog.close());
   dialog?.addEventListener('click', e => { if (e.target === dialog) dialog.close(); });
 

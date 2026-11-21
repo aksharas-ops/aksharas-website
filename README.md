@@ -1,29 +1,34 @@
-# Aksharas Veg Restaurant – Prototype-matched staging website
+# Aksharas Veg Restaurant – Responsive Website Staging
 
-This revision recreates the supplied 1024 × 1536 approved homepage mockup: header, split hero, green benefits strip, five menu cards, party banner, four speciality cards, testimonials, three branch cards and dark-green footer.
+A responsive static website prototype based on the approved Aksharas homepage design.
+
+## Files
+- `index.html` – homepage structure
+- `styles.css` – responsive layouts for desktop, tablet and mobile
+- `script.js` – mobile navigation, party enquiry dialog and five-star review filtering
+- `config.js` – ordering URL and review configuration
+- `assets/` – Aksharas logo and approved food/restaurant photographs
+
+## Responsive behaviour
+The layout is designed and tuned for viewport widths of 320px, 375px, 430px, 680px, 768px, 900px, 1120px, 1440px, 1840px and wider. The header changes to a collapsible menu at tablet widths; menu and speciality cards reflow; party orders stacks on mobile; branch cards become a single column on narrow phones. Images use responsive aspect ratios and `object-fit` to avoid distortion.
+
+## Preview locally
+Open `index.html` in a browser, or run a local server from this folder:
+
+```bash
+python -m http.server 8080
+```
+
+Then visit `http://localhost:8080`.
 
 ## Deploy
-- Static site; no build command required.
-- Upload the contents of this folder to the root of the `aksharas-website` GitHub repository.
-- Cloudflare Pages: framework preset `None`; build command blank; output directory `/` (or `.` depending on the Pages UI).
-- Do not change or overwrite the existing `aksharas-ops` Worker.
-
-## Assets
-The food and restaurant images in `assets/` are crops taken from the approved prototype screenshot so the staging page preserves the same pictured visuals. The primary logo is the supplied Aksharas logo file.
+Commit the extracted contents of this folder to the root of the existing `aksharas-ops/aksharas-website` GitHub repository on the `main` branch. The connected Cloudflare `aksharas-website-staging` project should build the latest commit automatically. Wait for the newest deployment to show **Ready** before testing the staging URL.
 
 ## Reviews
-`config.js` accepts verified review records. `script.js` strictly renders only entries with `rating === 5` and a non-empty comment. No sample or invented testimonials are included. Connect the Google Business Profile review source before populating this list.
+The frontend intentionally renders only reviews with a numeric rating exactly equal to 5 and a non-empty comment. `config.js` currently contains an empty review list. Connect a verified review source and populate the configuration before showing real customer comments. Do not insert fabricated reviews.
 
 ## Party enquiry
-The prototype form opens a WhatsApp message to the restaurant number currently shown on the existing website. Confirm this is the correct party enquiry number before launch. A database-backed enquiry workflow can replace this after Supabase is configured.
+The enquiry dialog prepares a WhatsApp message using the configured number in `script.js`. Verify the contact number before production launch. The current form is not database-backed.
 
-## Before public launch
-Verify branch phone numbers, map pins, official ordering links, Google review integration, and mobile display. The `Gallery` navigation anchor is retained for visual parity; a dedicated gallery page/section can be added in the next iteration.
-
-
-## V3 visual corrections
-- Fixed the speciality card markup so the intended card image and label styling applies.
-- Reduced the vertical gap between the hero description and action buttons.
-- Tightened the Party Orders banner layout to remove unnecessary vertical whitespace.
-- Adjusted branch image framing to keep the restaurant sign visible.
-- Preserved the approved brand colours, imagery, logo and page structure.
+## Production safety
+Keep the existing Aksharas Ops Worker and production domain unchanged while testing this staging website.
