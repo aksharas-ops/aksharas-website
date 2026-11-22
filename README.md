@@ -49,3 +49,9 @@ The Franchisee Enquiry and Corporate Catering forms use this function. Until Sup
 
 
 V11 visual update: Our Story section uses the site-wide warm cream background with subtle soft green and gold background accents, and a softly elevated ivory content panel.
+
+## V13 – Full-site Aksharas background theme
+- Extended the warm cream background and subtle green wave/leaf treatment across the full website, rather than limiting the illustrated theme to Our Story.
+- Added a low-opacity temple watermark behind the hero content.
+- Placed the temple tower, palm tree and banana-leaf idli illustration at the bottom-right of the overall website footer (not as a large element beside the hero text).
+- Kept the hero food photograph, headline, buttons and all existing content and links intact.
