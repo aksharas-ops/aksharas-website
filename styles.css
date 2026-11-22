@@ -480,3 +480,77 @@ body{background-color:var(--cream);background-image:url("assets/site-waves.svg")
     opacity:1 !important;
   }
 }
+
+
+/* V18: correct hero watermark, remove repeated section waves, and place the full motif after branch contacts */
+body{
+  background-color:var(--cream) !important;
+  background-image:none !important;
+}
+.hero-copy::before{
+  content:"" !important;
+  position:absolute !important;
+  z-index:0 !important;
+  pointer-events:none !important;
+  left:auto !important;
+  right:-1% !important;
+  top:2% !important;
+  bottom:0 !important;
+  width:54% !important;
+  height:96% !important;
+  border:0 !important;
+  border-radius:0 !important;
+  transform:none !important;
+  background-color:transparent !important;
+  background-image:url("assets/hero-temple-only.png") !important;
+  background-repeat:no-repeat !important;
+  background-position:right center !important;
+  background-size:contain !important;
+  opacity:.25 !important;
+  filter:none !important;
+}
+.hero-copy{overflow:hidden}
+.hero-copy > *{position:relative;z-index:1}
+.contact-section{
+  position:relative;
+  padding-bottom:0 !important;
+  background:var(--cream) !important;
+  overflow:hidden;
+}
+.contact-illustration{
+  width:100%;
+  display:flex;
+  justify-content:flex-end;
+  align-items:flex-end;
+  margin:10px auto 0;
+  pointer-events:none;
+}
+.contact-illustration img{
+  display:block;
+  width:clamp(260px,34vw,440px);
+  max-width:100%;
+  height:auto;
+  object-fit:contain;
+}
+.footer:after{display:none !important;content:none !important}
+.footer{
+  background:#fff8e9 !important;
+  color:#004d40 !important;
+  padding-right:clamp(20px,3vw,48px) !important;
+  min-height:0 !important;
+}
+.footer a,.footer h3{color:#004d40 !important}
+@media(max-width:767px){
+  .hero-copy::before{
+    right:-4% !important;
+    top:0 !important;
+    width:58% !important;
+    height:100% !important;
+    background-position:right center !important;
+    background-size:contain !important;
+    opacity:.19 !important;
+  }
+  .contact-illustration{margin-top:8px}
+  .contact-illustration img{width:min(82vw,330px)}
+  .footer{padding:20px !important}
+}

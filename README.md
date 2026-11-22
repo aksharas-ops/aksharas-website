@@ -55,3 +55,6 @@ V11 visual update: Our Story section uses the site-wide warm cream background wi
 - Added a low-opacity temple watermark behind the hero content.
 - Placed the temple tower, palm tree and banana-leaf idli illustration at the bottom-right of the overall website footer (not as a large element beside the hero text).
 - Kept the hero food photograph, headline, buttons and all existing content and links intact.
+
+
+V18 updates: hero now uses a dedicated temple-only transparent watermark so no text is embedded in or obscured by the background. Repeated site-wide wave backgrounds have been removed. The full-colour temple, palm tree and banana-leaf illustration now appears immediately after the Contact Us / Branch Contacts cards, with its green wave footer; it is no longer positioned in the site footer.
