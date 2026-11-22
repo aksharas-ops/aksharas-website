@@ -88,16 +88,17 @@ button,a{touch-action:manipulation}
 .special-card img{display:block;width:100%;aspect-ratio:2.05/1;height:auto;object-fit:cover;object-position:center;border-radius:22px;box-shadow:var(--shadow)}
 .special-card h3{position:relative;margin:-13px auto 0;background:#f7e6ca;border-radius:25px;box-shadow:var(--shadow);font-size:clamp(11px,.8vw,13px);font-weight:800;padding:9px 10px;width:min(84%,250px);min-height:36px;display:flex;align-items:center;justify-content:center;line-height:1.2;white-space:normal}
 
-/* Testimonials */
+/* Testimonials – manually maintained sample copy; no Google Reviews integration */
 .testimonials{background:#fff3df;border-radius:32px;padding-top:8px;padding-bottom:17px;margin:0 auto;width:calc(100% - clamp(24px,4vw,72px));max-width:1760px}
 .testimonials .section-title{margin-bottom:9px}
+.testimonial-note{text-align:center;color:#52675e;font-size:12px;margin:0 auto 10px}
+.testimonial-disclaimer{font-size:10px;opacity:.8;margin:10px auto 0}
 .review-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.2vw,20px)}
-.review-card{background:#fffdfa;border-radius:19px;padding:13px clamp(13px,1.4vw,22px);box-shadow:var(--shadow);min-height:112px;min-width:0}
+.review-card{background:#fffdfa;border-radius:19px;padding:15px clamp(13px,1.4vw,22px);box-shadow:var(--shadow);min-height:132px;min-width:0;display:flex;flex-direction:column}
 .review-stars{text-align:center;color:#ff9700;font-size:21px;letter-spacing:2px;line-height:1.1}
-.review-quote{font-size:clamp(12px,.82vw,14px);line-height:1.4;margin:7px 0 0;overflow-wrap:anywhere}
+.review-quote{font-size:clamp(12px,.82vw,14px);line-height:1.48;margin:9px 0 12px;overflow-wrap:anywhere;flex:1}
 .review-quote:before{content:'“';font:700 36px Georgia;color:var(--lime);float:left;margin:-7px 8px 0 0}
-.review-empty{text-align:center;color:#52675e;font-size:13px;margin:12px 0 5px}
-.review-empty[hidden]{display:none}
+.review-attribution{text-align:right;color:var(--green);font-size:12px;font-weight:800;margin:0}
 
 /* Branch cards */
 .branches{padding-top:22px;padding-bottom:28px}
@@ -246,6 +247,8 @@ button,a{touch-action:manipulation}
   .review-grid{grid-template-columns:1fr;gap:10px}
   .review-card{min-height:0;padding:12px 14px}
   .review-quote{font-size:13px}
+  .testimonial-note{font-size:11px;padding-inline:8px}
+  .testimonial-note{font-size:11px;padding-inline:8px}
   .branches{padding-top:18px;padding-bottom:22px}
   .branch-grid{grid-template-columns:1fr;gap:12px}
   .branch-card:last-child{grid-column:auto;max-width:none;justify-self:stretch}
@@ -318,3 +321,10 @@ button[disabled]{opacity:.65;cursor:wait;}
  .contact-branch-strip{flex-direction:column;gap:7px}
  .contact-intro{font-size:13px;padding-inline:8px}
 }
+
+/* Our Story section */
+.story-section{padding-top:28px;padding-bottom:30px;scroll-margin-top:100px}
+.story-content{max-width:980px;margin:0 auto;padding:clamp(20px,3vw,34px) clamp(20px,4vw,48px);background:#fffdf7;border:1px solid rgba(0,77,64,.10);border-radius:18px;box-shadow:0 8px 28px rgba(35,55,45,.06)}
+.story-content p{margin:0 0 13px;color:#4f5d56;font-size:clamp(14px,1.05vw,16px);line-height:1.85}
+.story-content p:last-child{margin-bottom:0}
+@media(max-width:767px){.story-section{padding-top:22px;padding-bottom:22px;scroll-margin-top:80px}.story-content{padding:19px 18px;border-radius:14px}.story-content p{font-size:14px;line-height:1.75;margin-bottom:11px}}

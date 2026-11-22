@@ -43,43 +43,6 @@
     dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
   });
 
-  // Public reviews endpoint returns only published, exact five-star reviews with comments.
-  async function loadPublishedReviews() {
-    const grid = document.getElementById('review-grid');
-    const empty = document.getElementById('review-empty');
-    if (!grid || !empty) return;
-    const ready = cfg.supabaseUrl && !cfg.supabaseUrl.includes('YOUR-WEBSITE-PROJECT') &&
-      cfg.supabasePublishableKey && !cfg.supabasePublishableKey.includes('YOUR_SUPABASE');
-    if (!ready) {
-      empty.textContent = 'Customer testimonials will appear here once verified five-star reviews are connected.';
-      return;
-    }
-    try {
-      const response = await fetch(`${cfg.supabaseUrl}/functions/v1/get-published-reviews`, {
-        headers: { apikey: cfg.supabasePublishableKey, Authorization: `Bearer ${cfg.supabasePublishableKey}` }
-      });
-      if (!response.ok) throw new Error('Reviews are temporarily unavailable.');
-      const payload = await response.json();
-      const reviews = (payload.reviews || []).filter(r => Number(r.star_rating) === 5 && String(r.comment || '').trim());
-      grid.replaceChildren();
-      reviews.slice(0, 3).forEach(r => {
-        const card = document.createElement('article'); card.className = 'review-card';
-        const stars = document.createElement('div'); stars.className = 'review-stars'; stars.textContent = '★★★★★';
-        const quote = document.createElement('p'); quote.className = 'review-quote'; quote.textContent = `“${r.comment}”`;
-        card.append(stars, quote);
-        const attribution = document.createElement('small');
-        attribution.textContent = [r.reviewer_name || 'Google customer', r.branch].filter(Boolean).join(' · ');
-        card.append(attribution);
-        grid.append(card);
-      });
-      empty.hidden = reviews.length > 0;
-      if (!reviews.length) empty.textContent = 'Verified five-star customer comments will appear here after approval.';
-    } catch (err) {
-      empty.textContent = 'Customer testimonials are temporarily unavailable.';
-    }
-  }
-  loadPublishedReviews();
-
   // Save franchisee and corporate catering enquiries to the website Supabase project.
   document.querySelectorAll('.business-enquiry-form').forEach(form => {
     form.addEventListener('submit', async event => {
