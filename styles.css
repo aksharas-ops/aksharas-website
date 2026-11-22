@@ -670,3 +670,64 @@ body{
  .contact-section:after{height:18px;background-size:auto 18px}
  .contact-illustration{margin-top:14px}
 }
+
+
+/* V21: one unified enquiry panel, with the approved temple artwork inside the Branch Contacts area */
+.contact-section{padding:38px clamp(18px,4vw,64px) 58px !important;background:var(--cream) !important}
+.contact-heading{margin-bottom:clamp(28px,3.4vw,48px)}
+.contact-panel{position:relative;z-index:1;width:100%;max-width:1600px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,2.05fr);min-height:clamp(390px,34vw,500px);padding:clamp(18px,2vw,28px);border:1px solid rgba(255,255,255,.96);border-radius:34px;background:linear-gradient(145deg,rgba(255,255,255,.78),rgba(255,250,238,.9));box-shadow:0 14px 32px rgba(82,62,27,.13),inset 0 1px 0 #fff;overflow:hidden}
+.contact-panel:before{content:"";position:absolute;left:-16px;top:-18px;width:112px;height:82px;border-radius:0 0 100% 0;border-top:9px solid #a4d82b;border-left:9px solid #a4d82b;pointer-events:none;z-index:2}
+.contact-panel-column{position:relative;min-width:0;display:flex;flex-direction:column;align-items:center;text-align:center;padding:clamp(12px,1.6vw,24px) clamp(12px,1.5vw,24px);}
+.contact-panel-column:not(:first-child){border-left:1px solid #e6d9b8}
+.contact-enquiry-icon{width:clamp(58px,4.5vw,76px);height:clamp(58px,4.5vw,76px);flex:0 0 auto;margin:0 0 12px;background:linear-gradient(145deg,#edf6d0,#dcebb5);box-shadow:none}
+.contact-enquiry-card h3,.contact-panel-column h3{font:800 clamp(21px,1.85vw,30px)/1.16 'Playfair Display',Georgia,serif;color:var(--green);margin:0 0 12px;letter-spacing:-.3px}
+.contact-panel-column p{max-width:380px;margin:0 auto 12px;color:#17231e;font-size:clamp(14px,1.1vw,18px);line-height:1.55}
+.contact-card-art{display:flex;align-items:center;justify-content:center;flex:1;min-height:95px;width:100%;opacity:.92}
+.contact-card-art svg{width:min(80%,220px);height:100%;max-height:112px;fill:none;stroke:#e8d19a;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.contact-form-button{width:100%;max-width:330px;min-height:54px;padding:12px 16px;border-radius:30px;font-size:clamp(13px,.98vw,16px);white-space:nowrap;box-shadow:0 5px 12px rgba(255,90,0,.2)}
+.branch-panel-column{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(180px,.88fr);align-items:stretch;text-align:center;padding:clamp(10px,1.2vw,18px) 0 clamp(10px,1.2vw,18px) clamp(14px,1.4vw,22px);overflow:hidden}
+.branch-panel-details{position:relative;z-index:1;min-width:0;display:flex;flex-direction:column;align-items:center;padding:0 clamp(8px,1vw,16px) 0 0}
+.branch-panel-details .contact-enquiry-icon{margin-bottom:10px}
+.branch-panel-details h3{margin-bottom:10px}
+.branch-panel-details p{font-size:clamp(13px,1vw,16px);line-height:1.45;margin-bottom:12px}
+.branch-contact-list{width:100%;display:flex;flex-direction:column;gap:clamp(7px,.65vw,11px);margin-top:auto}
+.branch-contact-list a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 8px;align-items:center;padding:clamp(8px,.8vw,12px) clamp(9px,.85vw,13px);border:1px solid #e6e2c9;border-radius:22px;background:rgba(255,255,255,.78);color:var(--green);text-decoration:none;text-align:left;box-shadow:0 4px 10px rgba(85,92,40,.05);transition:transform .18s ease,box-shadow .18s ease}
+.branch-contact-list a:hover{background:#fff;border-color:#b6d276;transform:translateY(-2px);box-shadow:0 8px 16px rgba(85,92,40,.1)}
+.branch-contact-list strong{font-size:clamp(13px,1.05vw,17px);font-weight:800;display:flex;align-items:center;gap:8px}
+.branch-contact-list span{font-size:clamp(11px,.92vw,15px);color:#1c2923;padding-left:21px}
+.branch-contact-list b{grid-column:2;grid-row:1 / span 2;align-self:center;font-size:clamp(12px,1vw,16px);font-weight:700;color:var(--orange);border:1px solid var(--orange);border-radius:24px;padding:7px 12px;white-space:nowrap}
+.branch-contact-list strong .branch-pin{display:inline-block;position:relative;flex:0 0 13px;width:13px;height:17px;margin:0 1px 0 0}
+.branch-contact-list strong .branch-pin:before{content:"";position:absolute;left:2px;top:1px;width:9px;height:9px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:#5d9e32}
+.branch-contact-list strong .branch-pin:after{content:"";position:absolute;left:5px;top:4px;width:3px;height:3px;border-radius:50%;background:#fff8e9}
+.branch-panel-art{position:relative;align-self:stretch;min-width:0;min-height:100%;overflow:hidden;border-radius:0 22px 22px 0;display:flex;align-items:center;justify-content:center}
+.branch-panel-art img{display:block;width:100%;height:100%;min-height:330px;object-fit:cover;object-position:center center;mix-blend-mode:multiply}
+.contact-section:after{height:clamp(28px,3.5vw,52px);background:url("assets/site-waves.svg") center bottom/100% auto no-repeat;opacity:.9}
+@media(max-width:1100px) and (min-width:701px){
+ .contact-panel{grid-template-columns:1fr 1fr;gap:0;padding:18px;}
+ .contact-panel-column{min-height:360px}
+ .branch-panel-column{grid-column:1/-1;border-left:0 !important;border-top:1px solid #e6d9b8;margin-top:10px;padding-top:20px;grid-template-columns:minmax(0,1fr) minmax(240px,.8fr)}
+ .branch-panel-details{max-width:560px;margin:0 auto;width:100%}
+ .branch-panel-art img{min-height:280px;max-height:330px;object-fit:contain}
+}
+@media(max-width:700px){
+ .contact-section{padding:30px 16px 46px !important}
+ .contact-heading{margin-bottom:22px}
+ .contact-eyebrow{gap:12px;letter-spacing:.16em}
+ .contact-heading h2{font-size:clamp(30px,8vw,42px)}
+ .contact-intro{font-size:14px}
+ .contact-panel{grid-template-columns:1fr;padding:12px 16px;border-radius:24px;min-height:0}
+ .contact-panel-column{padding:22px 6px;min-height:310px}
+ .contact-panel-column:not(:first-child){border-left:0;border-top:1px solid #e6d9b8}
+ .contact-enquiry-icon{width:60px;height:60px;margin-bottom:10px}
+ .contact-panel-column h3{font-size:23px}
+ .contact-panel-column p{font-size:14px}
+ .contact-card-art{min-height:74px;max-height:90px}
+ .contact-form-button{min-height:48px;font-size:13px;white-space:normal}
+ .branch-panel-column{grid-template-columns:1fr;padding:22px 4px 8px;gap:12px}
+ .branch-panel-details{padding:0;width:100%}
+ .branch-contact-list{gap:8px}
+ .branch-contact-list a{grid-template-columns:minmax(0,1fr) auto;padding:9px 11px}
+ .branch-contact-list span{padding-left:21px}
+ .branch-panel-art{height:250px;min-height:0;border-radius:18px}
+ .branch-panel-art img{min-height:0;height:100%;object-fit:contain;max-width:100%}
+}
