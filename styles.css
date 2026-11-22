@@ -325,12 +325,15 @@ button[disabled]{opacity:.65;cursor:wait;}
  .contact-intro{font-size:13px;padding-inline:8px}
 }
 
-/* Our Story: warm Aksharas cream background with a soft ivory content panel */
-.story-section{position:relative;padding-top:28px;padding-bottom:34px;scroll-margin-top:100px;background:radial-gradient(ellipse at 12% 18%,rgba(211,165,28,.075),transparent 30%),radial-gradient(ellipse at 88% 82%,rgba(131,182,60,.075),transparent 32%),var(--cream)}
-.story-content{max-width:980px;margin:0 auto;padding:clamp(22px,3.1vw,35px) clamp(22px,4.2vw,48px);background:rgba(255,253,248,.94);border:1px solid rgba(0,77,64,.11);border-radius:19px;box-shadow:0 9px 30px rgba(61,48,26,.055)}
-.story-content p{margin:0 0 13px;color:#53645c;font-size:clamp(14px,1.05vw,16px);line-height:1.85;letter-spacing:.005em}
+/* Our Story: full-width illustrated Aksharas background, with no content card */
+.story-section{position:relative;isolation:isolate;overflow:hidden;padding-top:30px;padding-bottom:clamp(74px,9vw,130px);scroll-margin-top:100px;background:#fff7e7 url("assets/story-background.svg") center center/cover no-repeat}
+.story-section .section-title{position:relative;z-index:1;margin-bottom:clamp(24px,3vw,42px)}
+.story-content{position:relative;z-index:1;width:100%;max-width:1600px;margin:0 auto;padding:clamp(8px,1.4vw,20px) clamp(22px,3.5vw,64px);background:transparent;border:0;border-radius:0;box-shadow:none}
+.story-content p{margin:0 0 clamp(13px,1.35vw,22px);color:#26332c;font-size:clamp(15px,1.38vw,22px);line-height:1.72;letter-spacing:0}
 .story-content p:last-child{margin-bottom:0}
-@media(max-width:767px){.story-section{padding-top:22px;padding-bottom:24px;scroll-margin-top:80px}.story-content{padding:19px 18px;border-radius:15px}.story-content p{font-size:14px;line-height:1.75;margin-bottom:11px}}
+@media(max-width:767px){.story-section{padding-top:24px;padding-bottom:90px;scroll-margin-top:80px;background-position:58% center;background-size:auto 100%}.story-section .section-title{margin-bottom:18px}.story-content{padding:8px 18px}.story-content p{font-size:14px;line-height:1.7;margin-bottom:12px}.story-section:after{content:"";position:absolute;z-index:0;inset:0;background:linear-gradient(180deg,rgba(255,248,232,.16),rgba(255,248,232,.08) 65%,rgba(255,248,232,.0));pointer-events:none}}
+@media(min-width:768px) and (max-width:1100px){.story-content{padding-inline:28px}.story-content p{font-size:17px}}
+
 
 @media(min-width:681px) and (max-width:1000px){
  .contact-enquiry-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
