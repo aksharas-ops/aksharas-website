@@ -731,3 +731,10 @@ body{
  .branch-panel-art{height:250px;min-height:0;border-radius:18px}
  .branch-panel-art img{min-height:0;height:100%;object-fit:contain;max-width:100%}
 }
+
+
+/* V22: blend the temple artwork into the Branch Contacts panel (no rectangular image tile). */
+.branch-panel-art{background:transparent !important;border:0 !important;border-radius:0 !important;box-shadow:none !important;overflow:visible !important;align-self:stretch;min-width:0;display:flex;align-items:center;justify-content:center;padding:0 !important}
+.branch-panel-art img{display:block;width:100%;height:100%;min-height:330px;max-height:100%;object-fit:contain !important;object-position:center bottom !important;mix-blend-mode:normal !important;border:0 !important;border-radius:0 !important;box-shadow:none !important;background:transparent !important}
+@media(max-width:1100px) and (min-width:701px){.branch-panel-art img{min-height:280px;max-height:330px;object-fit:contain !important}}
+@media(max-width:700px){.branch-panel-art{height:250px;min-height:0;border-radius:0 !important;background:transparent !important}.branch-panel-art img{min-height:0;height:100%;object-fit:contain !important;max-width:100%}}
