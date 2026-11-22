@@ -625,3 +625,48 @@ body{
 .contact-enquiry-icon svg{width:54%;height:54%;fill:none;stroke:currentColor;stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round}
 .branch-contact-card .contact-enquiry-icon svg{fill:currentColor;stroke:none}
 .contact-card-art svg{width:min(68%,190px);height:100%;max-height:100px;fill:none;stroke:#e8d5a0;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+
+
+/* V20: pixel-proportion refinement to match the approved Contact prototype */
+@media (min-width:1101px){
+  .contact-section{padding:38px 4vw 30px !important}
+  .contact-heading{margin-bottom:42px;max-width:1180px}
+  .contact-eyebrow{font-size:14px;gap:22px;margin-bottom:8px;letter-spacing:.24em}
+  .contact-eyebrow span{width:66px;height:1.5px}
+  .contact-heading h2{font-size:50px;line-height:1.08;letter-spacing:-1px}
+  .contact-intro{font-size:17px;line-height:1.45;margin-top:10px}
+  .contact-layout{max-width:1364px;grid-template-columns:minmax(0,3.25fr) minmax(280px,1fr);gap:18px;align-items:center}
+  .contact-enquiry-grid{gap:18px}
+  .contact-enquiry-card{min-height:416px;padding:24px 18px 22px;border-radius:28px}
+  .contact-enquiry-card:before{width:92px;height:65px;border-top-width:7px;border-left-width:7px}
+  .contact-enquiry-icon{width:64px;height:64px;margin-bottom:12px}
+  .contact-enquiry-card h3{font-size:25px;line-height:1.16;margin-bottom:10px}
+  .contact-enquiry-card p{font-size:16px;line-height:1.55;margin-bottom:12px}
+  .contact-card-art{min-height:90px;max-height:110px;flex:1;opacity:.86}
+  .contact-card-art svg{width:min(78%,205px);max-height:108px;stroke-width:2.6}
+  .contact-form-button{width:100%;min-height:54px;font-size:14px;padding:12px 16px;border-radius:30px}
+  .branch-contact-list{gap:12px}
+  .branch-contact-list a{min-height:64px;padding:10px 12px;border-radius:14px;gap:2px 8px}
+  .branch-contact-list strong{font-size:15px;display:flex;align-items:center;gap:8px}
+  .branch-contact-list span{font-size:13px;padding-left:21px}
+  .branch-contact-list b{font-size:14px;padding:7px 12px}
+  .contact-illustration{min-height:416px;align-items:center}
+  .contact-illustration img{width:100%;max-height:416px;object-fit:contain}
+  .contact-section:after{height:14px;background-size:100% 14px;opacity:.7}
+}
+/* Remove duplicate decorative glyphs; the illustrations are drawn by the SVGs themselves. */
+.franchise-art:before,.catering-art:before{content:none !important;display:none !important}
+.branch-contact-list strong .branch-pin{display:inline-block;position:relative;flex:0 0 13px;width:13px;height:17px;margin:0 1px 0 0}
+.branch-contact-list strong .branch-pin:before{content:"";position:absolute;left:2px;top:1px;width:9px;height:9px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:#5d9e32}
+.branch-contact-list strong .branch-pin:after{content:"";position:absolute;left:5px;top:4px;width:3px;height:3px;border-radius:50%;background:#fff8e9}
+@media(max-width:1100px) and (min-width:701px){
+ .contact-section{padding:34px 3vw 28px !important}
+ .contact-heading{margin-bottom:30px}
+ .contact-layout{grid-template-columns:minmax(0,1fr) minmax(220px,.72fr);gap:14px}
+ .contact-enquiry-card{min-height:360px}
+ .contact-illustration{min-height:360px}
+}
+@media(max-width:700px){
+ .contact-section:after{height:18px;background-size:auto 18px}
+ .contact-illustration{margin-top:14px}
+}
