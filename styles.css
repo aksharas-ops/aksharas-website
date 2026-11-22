@@ -284,3 +284,11 @@ button,a{touch-action:manipulation}
 }
 
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+
+
+/* Enquiry integration states */
+.website-honeypot{position:absolute!important;left:-10000px!important;top:auto!important;width:1px!important;height:1px!important;overflow:hidden!important;}
+.form-status{min-height:1.25rem;margin:.5rem 0;color:#004d40;font-size:.9rem;}
+.form-status.error{color:#b42318;}
+.form-status.success{color:#087443;}
+button[disabled]{opacity:.65;cursor:wait;}
