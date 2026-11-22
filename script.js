@@ -27,10 +27,21 @@
     }
   });
 
-  const dialog = document.getElementById('enquiry-dialog');
-  document.querySelectorAll('[data-open-enquiry]').forEach(btn => btn.addEventListener('click', () => dialog?.showModal()));
-  document.querySelector('.close-dialog')?.addEventListener('click', () => dialog.close());
-  dialog?.addEventListener('click', e => { if (e.target === dialog) dialog.close(); });
+  // Contact Us CTAs open only the relevant franchise or corporate catering forms.
+  document.querySelectorAll('[data-open-form]').forEach(button => {
+    button.addEventListener('click', () => {
+      const formId = button.getAttribute('data-open-form');
+      const form = document.getElementById(formId);
+      const dialog = form?.closest('dialog');
+      if (dialog && !dialog.open) dialog.showModal();
+    });
+  });
+  document.querySelectorAll('.close-dialog').forEach(button => {
+    button.addEventListener('click', () => button.closest('dialog')?.close());
+  });
+  document.querySelectorAll('dialog.enquiry-dialog').forEach(dialog => {
+    dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
+  });
 
   // Public reviews endpoint returns only published, exact five-star reviews with comments.
   async function loadPublishedReviews() {
@@ -69,53 +80,60 @@
   }
   loadPublishedReviews();
 
-  // Save the enquiry through the Supabase Edge Function before opening WhatsApp.
-  const partyForm = document.getElementById('party-form');
-  const status = document.getElementById('party-form-status');
-  partyForm?.addEventListener('submit', async e => {
-    e.preventDefault();
-    const data = Object.fromEntries(new FormData(partyForm).entries());
-    if (data.website) return; // honeypot: silently ignore automated submissions
-    const ready = cfg.supabaseUrl && !cfg.supabaseUrl.includes('YOUR-WEBSITE-PROJECT') &&
-      cfg.supabasePublishableKey && !cfg.supabasePublishableKey.includes('YOUR_SUPABASE');
-    if (!ready) {
-      status.textContent = 'The enquiry service is not configured yet. Please contact the selected branch by phone.';
-      status.className = 'form-status error';
-      return;
-    }
-    const submit = partyForm.querySelector('button[type="submit"]');
-    submit.disabled = true;
-    status.textContent = 'Submitting your enquiry…';
-    status.className = 'form-status';
-    try {
-      const response = await fetch(`${cfg.supabaseUrl}/functions/v1/submit-party-enquiry`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          apikey: cfg.supabasePublishableKey,
-          Authorization: `Bearer ${cfg.supabasePublishableKey}`
-        },
-        body: JSON.stringify({
-          name: data.name, phone: data.phone, event_type: data.event, branch: data.branch,
-          event_date: data.date, guest_count: Number(data.guests), details: data.details || '', website: ''
-        })
-      });
-      const result = await response.json().catch(() => ({}));
-      if (!response.ok) throw new Error(result.error || 'Could not save your enquiry. Please try again.');
-      const body = `Party Order Enquiry\nEnquiry ID: ${result.enquiry_id}\nName: ${data.name}\nMobile: ${data.phone}\nEvent: ${data.event}\nBranch: ${data.branch}\nDate: ${data.date}\nGuests: ${data.guests}\nDetails: ${data.details || 'Not provided'}`;
-      const branchPhones = cfg.branchPhones || {};
-      const destination = branchPhones[data.branch] || branchPhones.Porur || '+919677186207';
-      const waUrl = `https://wa.me/${destination.replace(/\D/g, '')}?text=${encodeURIComponent(body)}`;
-      status.textContent = 'Your enquiry has been saved. Opening WhatsApp…';
-      status.className = 'form-status success';
-      window.open(waUrl, '_blank', 'noopener');
-      partyForm.reset();
-      setTimeout(() => dialog?.close(), 700);
-    } catch (err) {
-      status.textContent = err.message || 'Something went wrong. Please try again.';
-      status.className = 'form-status error';
-    } finally {
-      submit.disabled = false;
-    }
+  // Save franchisee and corporate catering enquiries to the website Supabase project.
+  document.querySelectorAll('.business-enquiry-form').forEach(form => {
+    form.addEventListener('submit', async event => {
+      event.preventDefault();
+      const status = form.querySelector('.form-status');
+      const submit = form.querySelector('button[type="submit"]');
+      const data = Object.fromEntries(new FormData(form).entries());
+      if (data.website) return; // honeypot
+      const ready = cfg.supabaseUrl && !cfg.supabaseUrl.includes('YOUR-WEBSITE-PROJECT') &&
+        cfg.supabasePublishableKey && !cfg.supabasePublishableKey.includes('YOUR_SUPABASE');
+      if (!ready) {
+        status.textContent = 'The enquiry service is not configured yet. Please call one of our branches.';
+        status.className = 'form-status error';
+        return;
+      }
+      submit.disabled = true;
+      status.textContent = 'Submitting your enquiry…';
+      status.className = 'form-status';
+      try {
+        const payload = {
+          enquiry_type: form.dataset.enquiryType,
+          name: data.name,
+          phone: data.phone,
+          email: data.email || '',
+          location: data.location,
+          company: data.company || '',
+          investment_range: data.investment_range || '',
+          experience: data.experience || '',
+          event_date: data.event_date || null,
+          guest_count: data.guest_count ? Number(data.guest_count) : null,
+          details: data.details || '',
+          website: ''
+        };
+        const response = await fetch(`${cfg.supabaseUrl}/functions/v1/submit-business-enquiry`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            apikey: cfg.supabasePublishableKey,
+            Authorization: `Bearer ${cfg.supabasePublishableKey}`
+          },
+          body: JSON.stringify(payload)
+        });
+        const result = await response.json().catch(() => ({}));
+        if (!response.ok) throw new Error(result.error || 'Could not submit your enquiry. Please try again.');
+        status.textContent = `Thank you. Your enquiry has been submitted successfully. Reference: ${result.enquiry_id}`;
+        status.className = 'form-status success';
+        form.reset();
+        setTimeout(() => form.closest('dialog')?.close(), 2200);
+      } catch (error) {
+        status.textContent = error.message || 'Something went wrong. Please try again.';
+        status.className = 'form-status error';
+      } finally {
+        submit.disabled = false;
+      }
+    });
   });
 })();

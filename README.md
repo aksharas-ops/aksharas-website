@@ -84,3 +84,19 @@ Update `config.js` with the new website Supabase URL and public publishable/anon
 - Porur: +91-9677186207
 - Perumbakkam: +91-8870716392
 - Madipakkam: +91-8925534939
+
+
+## Party Orders and Contact Us behaviour
+- The Party Orders banner's `Contact Us` button and the hero's `Contact Us for Party Orders` link navigate to the Contact Us section (`#contact`).
+- There is no Party Orders enquiry form in this flow.
+- The Contact Us section provides two separate forms: Franchisee Enquiry and Corporate Catering.
+- Both forms submit to the `submit-business-enquiry` Supabase Edge Function and are stored in `business_enquiries`.
+- Run the additional migration `supabase/migrations/202611220002_business_enquiries.sql` in the website Supabase project's SQL Editor, then deploy `submit-business-enquiry`.
+- Required Edge Function secret: `RATE_LIMIT_HASH_SECRET` (use a long random secret). The function uses the project's server-side service role key through Supabase's built-in environment.
+- Configure `[functions.submit-business-enquiry] verify_jwt = false` as included in `supabase/config.toml`, because public website visitors submit without signing in.
+
+### Franchisee form fields
+Full name, mobile number, email (optional), preferred city/location, investment capacity, and relevant business/restaurant experience (optional).
+
+### Corporate Catering form fields
+Company/organisation, contact person, mobile number, email (optional), event/delivery location, event date (optional), approximate guest count (optional), and catering requirements (optional).

@@ -292,3 +292,29 @@ button,a{touch-action:manipulation}
 .form-status.error{color:#b42318;}
 .form-status.success{color:#087443;}
 button[disabled]{opacity:.65;cursor:wait;}
+
+
+/* Contact Us: party CTAs navigate here; only franchise and corporate catering use forms. */
+.contact-section{padding-top:30px;padding-bottom:30px;scroll-margin-top:90px}
+.contact-intro{text-align:center;color:#53655e;max-width:650px;margin:-5px auto 20px;font-size:14px}
+.contact-enquiry-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,2vw,26px);max-width:1050px;margin:0 auto}
+.contact-enquiry-card{background:#fffdf8;border:1px solid #eee2d1;border-radius:20px;box-shadow:var(--shadow);padding:clamp(18px,2.4vw,30px);text-align:center;display:flex;flex-direction:column;align-items:center;min-width:0}
+.contact-enquiry-icon{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:#eaf2e5;color:var(--green);font-size:25px;margin-bottom:10px}
+.contact-enquiry-card h3{font:800 clamp(20px,1.7vw,25px)/1.2 'Playfair Display',Georgia,serif;color:var(--green);margin:0 0 8px}
+.contact-enquiry-card p{color:#53655e;max-width:390px;margin:0 0 18px;flex:1}
+.contact-form-button{font-size:13px;min-height:44px}
+.contact-branch-strip{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:9px 20px;margin:22px auto 0;color:var(--green);font-size:12px}
+.contact-branch-strip span{font-weight:800}
+.contact-branch-strip a{color:var(--green);text-decoration:none;font-weight:700}
+.contact-branch-strip a:hover{text-decoration:underline}
+.enquiry-dialog{width:min(640px,calc(100vw - 24px))}
+.enquiry-dialog .form-grid label{font-size:13px}
+.enquiry-dialog .form-grid input,.enquiry-dialog .form-grid select,.enquiry-dialog .form-grid textarea{min-height:42px}
+.enquiry-dialog .business-enquiry-form>button[type="submit"]{margin-top:5px}
+@media(max-width:680px){
+ .contact-section{padding-top:22px;padding-bottom:24px}
+ .contact-enquiry-grid{grid-template-columns:1fr;gap:12px}
+ .contact-enquiry-card{padding:20px 16px}
+ .contact-branch-strip{flex-direction:column;gap:7px}
+ .contact-intro{font-size:13px;padding-inline:8px}
+}
