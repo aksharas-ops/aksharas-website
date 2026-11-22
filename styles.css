@@ -441,3 +441,42 @@ body{background-color:var(--cream);background-image:url("assets/site-waves.svg")
   .footer{min-height:360px;padding:20px 20px 190px;}
   .footer:after{right:0;bottom:0;width:230px;height:168px;}
 }
+
+/* V17: Match the approved hero prototype exactly: a pale temple-only watermark.
+   Keep the full-colour temple/palm/banana illustration reserved for the footer. */
+.hero-copy::before{
+  content:"" !important;
+  position:absolute !important;
+  z-index:0 !important;
+  pointer-events:none !important;
+  left:auto !important;
+  right:0 !important;
+  top:0 !important;
+  bottom:0 !important;
+  width:72% !important;
+  height:100% !important;
+  border:0 !important;
+  border-radius:0 !important;
+  transform:none !important;
+  opacity:1 !important;
+  filter:none !important;
+  background-color:transparent !important;
+  background-image:url("assets/hero-temple-watermark.jpg") !important;
+  background-repeat:no-repeat !important;
+  background-position:right center !important;
+  background-size:auto 100% !important;
+}
+.hero-copy > *{position:relative;z-index:1}
+.hero-copy{overflow:hidden}
+@media(max-width:767px){
+  .hero-copy::before{
+    right:0 !important;
+    top:0 !important;
+    bottom:0 !important;
+    width:78% !important;
+    height:100% !important;
+    background-size:auto 100% !important;
+    background-position:right center !important;
+    opacity:1 !important;
+  }
+}
