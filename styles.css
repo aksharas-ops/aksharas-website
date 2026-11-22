@@ -409,3 +409,35 @@ body{background-color:var(--cream);background-image:url("assets/site-waves.svg")
   .hero-copy::before{right:0;top:2%;width:52%;height:88%;opacity:.13}
   .footer:after{filter:brightness(0) invert(1);right:10px;bottom:0;width:155px;height:155px}
 }
+
+/* V16: use the approved full-colour temple, palm and banana-leaf illustration
+   on a cream footer. Do not invert it into a white outline on dark green. */
+.footer{
+  background:#fff8e9 !important;
+  color:#004d40 !important;
+  min-height:245px;
+  padding-right:clamp(260px,29vw,390px);
+  border-top:1px solid rgba(0,77,64,.12);
+}
+.footer a{color:#004d40 !important}
+.footer h3{color:#004d40}
+.footer-logo{border-right-color:rgba(0,77,64,.22)}
+.footer:after{
+  content:"";
+  position:absolute;
+  z-index:0;
+  right:0;
+  bottom:0;
+  top:auto;
+  width:clamp(260px,29vw,390px);
+  height:245px;
+  background:url("assets/temple-banana-footer.png") right bottom/100% 100% no-repeat;
+  filter:none !important;
+  opacity:1 !important;
+  pointer-events:none;
+}
+.footer:before{color:#8abf3f;opacity:.28}
+@media(max-width:767px){
+  .footer{min-height:360px;padding:20px 20px 190px;}
+  .footer:after{right:0;bottom:0;width:230px;height:168px;}
+}
