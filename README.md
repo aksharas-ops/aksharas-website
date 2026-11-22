@@ -46,3 +46,6 @@ The Franchisee Enquiry and Corporate Catering forms use this function. Until Sup
 ## Our Story
 - The header and footer “Our Story” links navigate to the `#story` section on the homepage.
 - Update the editorial copy in the `<section id="story">` block in `index.html`.
+
+
+V11 visual update: Our Story section uses the site-wide warm cream background with subtle soft green and gold background accents, and a softly elevated ivory content panel.

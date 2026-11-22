@@ -325,12 +325,12 @@ button[disabled]{opacity:.65;cursor:wait;}
  .contact-intro{font-size:13px;padding-inline:8px}
 }
 
-/* Our Story section */
-.story-section{padding-top:28px;padding-bottom:30px;scroll-margin-top:100px}
-.story-content{max-width:980px;margin:0 auto;padding:clamp(20px,3vw,34px) clamp(20px,4vw,48px);background:#fffdf7;border:1px solid rgba(0,77,64,.10);border-radius:18px;box-shadow:0 8px 28px rgba(35,55,45,.06)}
-.story-content p{margin:0 0 13px;color:#4f5d56;font-size:clamp(14px,1.05vw,16px);line-height:1.85}
+/* Our Story: warm Aksharas cream background with a soft ivory content panel */
+.story-section{position:relative;padding-top:28px;padding-bottom:34px;scroll-margin-top:100px;background:radial-gradient(ellipse at 12% 18%,rgba(211,165,28,.075),transparent 30%),radial-gradient(ellipse at 88% 82%,rgba(131,182,60,.075),transparent 32%),var(--cream)}
+.story-content{max-width:980px;margin:0 auto;padding:clamp(22px,3.1vw,35px) clamp(22px,4.2vw,48px);background:rgba(255,253,248,.94);border:1px solid rgba(0,77,64,.11);border-radius:19px;box-shadow:0 9px 30px rgba(61,48,26,.055)}
+.story-content p{margin:0 0 13px;color:#53645c;font-size:clamp(14px,1.05vw,16px);line-height:1.85;letter-spacing:.005em}
 .story-content p:last-child{margin-bottom:0}
-@media(max-width:767px){.story-section{padding-top:22px;padding-bottom:22px;scroll-margin-top:80px}.story-content{padding:19px 18px;border-radius:14px}.story-content p{font-size:14px;line-height:1.75;margin-bottom:11px}}
+@media(max-width:767px){.story-section{padding-top:22px;padding-bottom:24px;scroll-margin-top:80px}.story-content{padding:19px 18px;border-radius:15px}.story-content p{font-size:14px;line-height:1.75;margin-bottom:11px}}
 
 @media(min-width:681px) and (max-width:1000px){
  .contact-enquiry-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
