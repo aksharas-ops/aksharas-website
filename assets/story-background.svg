@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 700" preserveAspectRatio="xMidYMid slice">
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff5df"/><stop offset=".52" stop-color="#fffaf0"/><stop offset="1" stop-color="#f8f3dc"/></linearGradient>
+ <linearGradient id="wave" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#d8e99b" stop-opacity=".55"/><stop offset="1" stop-color="#a8cf55" stop-opacity=".72"/></linearGradient>
+ <linearGradient id="wave2" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#edf2bd" stop-opacity=".65"/><stop offset="1" stop-color="#c3dc78" stop-opacity=".8"/></linearGradient>
+</defs>
+<rect width="1800" height="700" fill="url(#bg)"/>
+<g opacity=".48" fill="none" stroke-linecap="round"><path d="M-60 180 Q65 20 220 55 Q135 120 40 120 Q150 85 260 20" stroke="#d7e89a" stroke-width="34"/><path d="M15 98 Q90 20 155 35 Q105 92 15 98Z" fill="#c9df83" stroke="none"/><path d="M150 88 Q195 15 265 10 Q230 80 150 88Z" fill="#f2d98c" stroke="none"/></g>
+<path d="M0 575 C220 625 350 670 590 650 C850 628 1030 685 1260 650 C1470 620 1630 610 1800 545 L1800 700 L0 700Z" fill="url(#wave2)"/>
+<path d="M0 625 C230 650 370 710 640 680 C900 650 1070 705 1320 675 C1530 650 1670 620 1800 610 L1800 700 L0 700Z" fill="url(#wave)"/>
+<g transform="translate(1515 390)" fill="none" stroke="#6d9f2e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity=".88">
+ <!-- temple tower -->
+ <path d="M110 205 L130 32 L245 32 L268 205 M121 178 L257 178 M125 150 L253 150 M129 122 L249 122 M133 94 L245 94 M137 66 L241 66 M130 32 L245 32"/>
+ <path d="M130 32 Q188 -4 245 32 M142 17 Q188 -16 233 17 M155 4 Q188 -18 220 4"/>
+ <path d="M165 205 L165 160 Q188 135 211 160 L211 205 M181 205 L181 170 Q188 160 195 170 L195 205"/>
+ <path d="M140 178 l12 -18 12 18 M218 178 l12 -18 12 18 M142 150 l12 -17 12 17 M216 150 l12 -17 12 17 M146 122 l12 -16 12 16 M212 122 l12 -16 12 16 M150 94 l12 -15 12 15 M208 94 l12 -15 12 15"/>
+ <!-- palm tree -->
+ <path d="M82 205 Q76 150 90 112 Q96 95 100 75"/><path d="M100 75 Q52 45 31 66 Q63 67 100 75 Q68 28 87 18 Q98 42 100 75 Q113 26 139 24 Q127 54 100 75 Q151 53 165 73 Q130 70 100 75"/>
+ <!-- banana leaf and idlis -->
+ <path d="M0 232 Q74 174 170 218 Q115 267 0 232Z"/><path d="M5 232 Q75 220 160 222 M40 219 l25 22 M78 211 l18 31 M115 211 l10 25"/>
+ <ellipse cx="126" cy="238" rx="66" ry="19"/><ellipse cx="126" cy="232" rx="52" ry="13"/>
+ <ellipse cx="100" cy="224" rx="17" ry="11" fill="#fff8df"/><ellipse cx="132" cy="218" rx="17" ry="11" fill="#fff8df"/><ellipse cx="158" cy="225" rx="17" ry="11" fill="#fff8df"/>
+ <path d="M132 200 Q124 186 136 176 M140 202 Q153 188 146 179" stroke-dasharray="3 5"/>
+</g>
+</svg>
