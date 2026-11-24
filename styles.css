@@ -66,19 +66,19 @@ button,a{touch-action:manipulation}
 .category:hover{transform:translateY(-2px);transition:transform .18s ease}
 
 /* Party orders: image + compact information grid, with no unused oversized column */
-.party-banner{width:calc(100% - clamp(24px,4vw,72px));max-width:1760px;margin:0 auto;min-height:clamp(170px,13vw,230px);border-radius:27px;overflow:hidden;background:var(--green);display:grid;grid-template-columns:minmax(260px,34%) minmax(0,66%);color:#fff;position:relative}
+.party-banner{width:calc(100% - clamp(24px,4vw,72px));max-width:1760px;margin:0 auto;min-height:clamp(190px,14vw,225px);border-radius:27px;overflow:hidden;background:var(--green);display:grid;grid-template-columns:minmax(260px,34%) minmax(0,66%);color:#fff;position:relative}
 .party-photo{height:100%;min-height:inherit;clip-path:ellipse(100% 132% at 0% 50%);overflow:hidden;background:#d9c4a3}
 .party-photo img{display:block;width:100%;height:100%;min-height:inherit;object-fit:cover;object-position:center}
-.party-info{padding:clamp(14px,1.4vw,24px) clamp(18px,2.2vw,40px);display:grid;grid-template-columns:minmax(0,1fr) minmax(145px,180px);grid-template-rows:auto 1fr;align-items:center;column-gap:clamp(12px,1.5vw,26px);row-gap:8px;background:radial-gradient(circle at 95% 5%,#0b6654 0 1px,transparent 2px)}
+.party-info{padding:clamp(16px,1.5vw,25px) clamp(20px,2.4vw,42px);display:grid;grid-template-columns:minmax(0,1fr) minmax(145px,180px);grid-template-rows:auto 1fr;align-items:center;column-gap:clamp(14px,1.7vw,28px);row-gap:10px;background:radial-gradient(circle at 95% 5%,#0b6654 0 1px,transparent 2px)}
 .party-heading{display:flex;align-items:center;gap:13px;grid-column:1/-1;min-width:0}
-.party-mark{font-size:clamp(30px,2.5vw,42px);line-height:1;color:#ffad00;flex:none}
-.party-heading h2{font:800 clamp(25px,2vw,34px)/1.1 'Playfair Display',Georgia,serif;margin:0}
-.party-heading p{margin:3px 0 0;font-size:clamp(11px,.8vw,13px)}
-.occasions{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));align-items:center;margin:4px 0 0;min-width:0}
-.occasions div{min-width:0;text-align:center;color:#ff9a00;font-size:clamp(20px,1.8vw,29px);line-height:1.1;padding:0 clamp(4px,.7vw,12px);border-right:1px solid #e7eee9}
+.party-mark{font-size:clamp(28px,2.2vw,36px);line-height:1;color:#ffad00;flex:none}
+.party-heading h2{font:800 clamp(28px,2.15vw,32px)/1.1 'Playfair Display',Georgia,serif;margin:0}
+.party-heading p{margin:4px 0 0;font-size:clamp(13px,.95vw,15px)}
+.occasions{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));align-items:center;margin:5px 0 0;min-width:0}
+.occasions div{min-width:0;text-align:center;color:#ff9a00;font-size:clamp(23px,1.8vw,27px);line-height:1.1;padding:0 clamp(5px,.8vw,13px);border-right:1px solid #e7eee9}
 .occasions div:last-child{border:0}
-.occasions small{display:block;color:#fff;font-size:clamp(10px,.72vw,12px);font-weight:700;margin-top:5px;line-height:1.2}
-.enquire-btn{align-self:center;justify-self:end;padding:13px clamp(18px,2vw,30px);margin:0;min-width:150px}
+.occasions small{display:block;color:#fff;font-size:clamp(12px,.85vw,14px);font-weight:700;margin-top:6px;line-height:1.2}
+.enquire-btn{align-self:center;justify-self:end;padding:12px clamp(18px,1.8vw,26px);margin:0;min-width:145px;font-size:clamp(13px,.9vw,14px)}
 
 /* Specialities */
 .special-section{padding-top:19px;padding-bottom:25px}
@@ -179,7 +179,7 @@ button,a{touch-action:manipulation}
   .party-banner{min-height:180px;grid-template-columns:34% 66%}
   .party-photo{min-height:180px}
   .party-info{grid-template-columns:minmax(0,1fr) 125px;column-gap:8px;padding:12px}
-  .party-heading h2{font-size:25px}
+  .party-heading h2{font-size:27px}
   .occasions div{font-size:20px}
   .occasions small{font-size:10px}
   .enquire-btn{min-width:120px;padding:10px 11px;font-size:12px}
@@ -231,9 +231,9 @@ button,a{touch-action:manipulation}
   .party-photo img{height:100%;min-height:0;aspect-ratio:2.2/1;object-fit:cover;object-position:center}
   .party-info{display:grid;grid-template-columns:1fr;grid-template-rows:auto auto auto;gap:12px;padding:15px 14px 17px}
   .party-heading{grid-column:1;grid-row:1;gap:10px}
-  .party-heading h2{font-size:25px}
-  .party-heading p{font-size:11px}
-  .party-mark{font-size:30px}
+  .party-heading h2{font-size:27px}
+  .party-heading p{font-size:12px}
+  .party-mark{font-size:32px}
   .occasions{grid-column:1;grid-row:2;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));width:100%;margin:0}
   .occasions div{font-size:20px;padding:0 3px}
   .occasions small{font-size:9px;line-height:1.2}
@@ -754,4 +754,41 @@ body{
   content:none !important;
   display:none !important;
   background:none !important;
+}
+
+
+/* V26: accessible hero image slideshow (maximum three images) */
+.hero-visual .hero-slide{
+  opacity:0;
+  transition:opacity .65s ease;
+  z-index:0;
+}
+.hero-visual .hero-slide.is-active{
+  opacity:1;
+  z-index:1;
+}
+.hero-visual .slider-dots{
+  align-items:center;
+}
+.hero-visual .slider-dots button{
+  appearance:none;
+  border:0;
+  padding:0;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:#fff;
+  box-shadow:0 1px 4px #0004;
+  cursor:pointer;
+}
+.hero-visual .slider-dots button.selected{
+  background:var(--orange);
+  transform:scale(1.12);
+}
+.hero-visual .slider-dots button:focus-visible{
+  outline:2px solid var(--green);
+  outline-offset:3px;
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-visual .hero-slide{transition:none}
 }
