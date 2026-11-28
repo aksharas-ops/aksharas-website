@@ -1,11 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 560" fill="none">
- <defs>
-  <pattern id="kolam" width="92" height="92" patternUnits="userSpaceOnUse" opacity=".22">
-   <path d="M46 5C68 27 68 65 46 87 24 65 24 27 46 5ZM5 46C27 24 65 24 87 46 65 68 27 68 5 46ZM20 20L72 72M72 20L20 72" stroke="#d9c58b" stroke-width="1.3"/>
-   <circle cx="46" cy="46" r="13" stroke="#d9c58b" stroke-width="1.2"/>
-  </pattern>
- </defs>
- <path d="M0 0H520V560H0Z" fill="url(#kolam)" opacity=".28"/>
  <!-- hanging brass lamp -->
  <g stroke="#c88b19" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity=".92">
   <path d="M120 0V52M116 52H124M120 52V75M112 75Q120 83 128 75M105 82H135L129 98H111Z"/>
