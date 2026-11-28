@@ -145,3 +145,20 @@
   show(active);
   start();
 })();
+
+
+/* V34: Show the home-delivery notice instead of redirecting from Order Online. */
+(() => {
+  const dialog = document.getElementById('order-online-popup');
+  if (!dialog) return;
+  document.addEventListener('click', event => {
+    const trigger = event.target.closest('.order-online-trigger');
+    if (!trigger) return;
+    event.preventDefault();
+    if (typeof dialog.showModal === 'function') dialog.showModal();
+  });
+  dialog.querySelector('.delivery-notice-close')?.addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', event => {
+    if (event.target === dialog) dialog.close();
+  });
+})();

@@ -813,3 +813,206 @@ body{
 @media(prefers-reduced-motion:reduce){
   .hero-visual .hero-slide{transition:none}
 }
+
+
+/* V30: Hero layout refined to match the approved reference screenshot. */
+.hero{
+  width:100%;
+  max-width:var(--content);
+  min-height:clamp(390px,31vw,470px);
+  grid-template-columns:minmax(0,43%) minmax(0,57%);
+  align-items:stretch;
+  background:var(--cream);
+}
+.hero-copy{
+  padding:clamp(34px,4.5vw,66px) clamp(24px,3.6vw,54px) clamp(30px,3.6vw,50px) clamp(34px,5vw,78px);
+  justify-content:center;
+  gap:0;
+  overflow:hidden;
+  background:transparent;
+}
+.hero-copy:before,.hero-copy:after{
+  content:none !important;
+  display:none !important;
+}
+.hero-copy::before{
+  content:"";
+  display:block !important;
+  position:absolute;
+  z-index:0;
+  pointer-events:none;
+  left:42%;
+  top:50%;
+  width:clamp(175px,18vw,285px);
+  height:88%;
+  transform:translate(-50%,-50%);
+  background:url("assets/hero-temple-only.png") center/contain no-repeat;
+  opacity:.13;
+}
+.hero-copy > *{position:relative;z-index:1}
+.hero h1{
+  font-size:clamp(37px,3.35vw,54px);
+  line-height:1.04;
+  letter-spacing:-.9px;
+  max-width:100%;
+  margin:0 0 10px;
+}
+.hero .green-rule{margin:0 0 11px;width:44px;height:4px}
+.hero-copy>p{
+  font-size:clamp(14px,1.05vw,16px);
+  line-height:1.48;
+  max-width:390px;
+  margin:0 0 17px;
+}
+.hero-buttons{gap:10px;align-items:center;width:auto}
+.hero-buttons .order-btn,.hero-buttons .party-outline{
+  min-height:42px;
+  font-size:12px;
+  padding:10px 15px;
+}
+.hero-visual{
+  min-height:clamp(390px,31vw,470px);
+  border-left:9px solid var(--orange);
+  border-top:0;
+  border-radius:clamp(62px,6.2vw,96px) 0 0 clamp(62px,6.2vw,96px);
+}
+.hero-visual img{object-fit:cover;object-position:center}
+.hero-visual .slider-dots{bottom:12px}
+@media(max-width:1120px){
+  .hero{grid-template-columns:minmax(0,44%) minmax(0,56%);min-height:360px}
+  .hero-copy{padding-left:clamp(28px,4vw,48px);padding-right:24px}
+  .hero h1{font-size:clamp(34px,3.8vw,44px)}
+  .hero-visual{min-height:360px}
+}
+@media(max-width:900px){
+  .hero{grid-template-columns:minmax(0,45%) minmax(0,55%);min-height:330px}
+  .hero-copy{padding:28px 22px 26px 30px}
+  .hero h1{font-size:clamp(31px,4vw,38px)}
+  .hero-copy>p{font-size:14px}
+  .hero-visual{min-height:330px}
+}
+@media(max-width:680px){
+  .hero{display:flex;flex-direction:column;min-height:0}
+  .hero-copy{padding:30px 7% 25px}
+  .hero-copy::before{left:70%;width:190px;height:82%;opacity:.10}
+  .hero h1{font-size:clamp(32px,8vw,40px);line-height:1.04;margin-bottom:9px}
+  .hero-copy>p{font-size:14px;line-height:1.45;margin-bottom:14px;max-width:100%}
+  .hero-buttons{width:100%;gap:9px}
+  .hero-buttons .order-btn,.hero-buttons .party-outline{font-size:11px;padding:10px 12px;min-height:42px}
+  .hero-visual{width:100%;min-height:0;height:auto;aspect-ratio:1.55/1;border:0;border-top:7px solid var(--orange);border-radius:44px 0 0 0}
+}
+@media(max-width:380px){
+  .hero-buttons .order-btn,.hero-buttons .party-outline{font-size:10px;padding:9px 10px}
+}
+
+
+/* V31: Contact panel – remove temple artwork and give all three columns equal width. */
+.contact-panel{
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  min-height:clamp(390px,34vw,500px);
+}
+.contact-panel-column{min-width:0}
+.branch-panel-column{
+  display:flex !important;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  padding:clamp(12px,1.6vw,24px) clamp(12px,1.5vw,24px) !important;
+  overflow:visible;
+}
+.branch-panel-details{
+  width:100%;
+  max-width:none !important;
+  margin:0 !important;
+  padding:0 !important;
+  align-items:center;
+}
+.branch-panel-details .contact-enquiry-icon{margin-bottom:12px}
+.branch-panel-details h3{margin-bottom:12px}
+.branch-panel-details p{font-size:clamp(14px,1.1vw,18px);line-height:1.55;margin:0 auto 12px}
+.branch-contact-list{width:100%;margin-top:0}
+.branch-panel-art{display:none !important}
+@media(max-width:1100px) and (min-width:701px){
+  .contact-panel{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+  .branch-panel-column{grid-column:1/-1;border-left:0 !important;border-top:1px solid #e6d9b8;margin-top:10px;padding-top:20px !important}
+}
+@media(max-width:700px){
+  .contact-panel{grid-template-columns:1fr !important}
+  .branch-panel-column{grid-column:auto;padding:22px 6px !important}
+}
+
+/* V32: Party Orders banner typography enlarged to match the approved prototype. */
+.party-banner{min-height:clamp(270px,22vw,340px);grid-template-columns:minmax(280px,34%) minmax(0,66%)}
+.party-photo{min-height:inherit}
+.party-info{grid-template-columns:minmax(0,1fr) minmax(190px,230px);padding:clamp(22px,2.2vw,38px) clamp(24px,2.8vw,48px);column-gap:clamp(18px,2vw,32px);row-gap:clamp(16px,1.8vw,26px)}
+.party-heading{gap:18px}
+.party-mark{font-size:clamp(38px,3vw,50px)}
+.party-heading h2{font-size:clamp(38px,3.1vw,48px);line-height:1.08}
+.party-heading p{font-size:clamp(17px,1.35vw,21px);line-height:1.35}
+.occasions{margin-top:8px}
+.occasions div{font-size:clamp(31px,2.6vw,40px);padding-inline:clamp(8px,1.1vw,18px)}
+.occasions small{font-size:clamp(16px,1.25vw,20px);line-height:1.25;margin-top:9px}
+.enquire-btn{min-width:190px;padding:16px 22px;font-size:clamp(16px,1.2vw,19px)}
+@media(max-width:1120px) and (min-width:901px){
+.party-banner{min-height:250px}.party-info{grid-template-columns:minmax(0,1fr) 175px;padding:20px}
+.party-heading h2{font-size:36px}.party-heading p{font-size:16px}.occasions div{font-size:29px}
+.occasions small{font-size:15px}.enquire-btn{min-width:155px;padding:13px 15px;font-size:15px}}
+@media(max-width:900px) and (min-width:681px){
+.party-banner{min-height:240px}.party-info{grid-template-columns:minmax(0,1fr) 145px;padding:16px}
+.party-heading h2{font-size:32px}.party-heading p{font-size:15px}.party-mark{font-size:34px}
+.occasions div{font-size:25px}.occasions small{font-size:13px}.enquire-btn{min-width:130px;padding:11px 12px;font-size:13px}}
+@media(max-width:680px){
+.party-info{gap:16px;padding:20px 16px 21px}.party-heading h2{font-size:32px}
+.party-heading p{font-size:15px;line-height:1.35}.party-mark{font-size:36px}
+.occasions div{font-size:25px;padding:0 4px}.occasions small{font-size:12px;line-height:1.25;margin-top:7px}
+.enquire-btn{font-size:15px;min-height:46px}}
+@media(max-width:380px){.occasions small{font-size:11px}}
+
+/* V33: Larger branch Call, Directions and Order Online buttons. */
+.branch-actions{gap:clamp(8px,.8vw,12px);align-items:center}
+.branch-actions a{font-size:clamp(13px,.95vw,15px)!important;font-weight:800;padding:11px 14px!important;min-height:42px!important;min-width:0;flex:1 1 0;line-height:1.15}
+.branch-actions .order-mini{padding:11px 12px!important}
+@media(max-width:900px){.branch-actions{gap:7px}.branch-actions a{font-size:13px!important;padding:10px 9px!important;min-height:40px!important}}
+@media(max-width:520px){.branch-actions{gap:6px}.branch-actions a{font-size:12px!important;padding:9px 6px!important;min-height:38px!important}}
+
+
+/* V34: Aksharas home-delivery announcement popup */
+.delivery-notice-dialog{
+  width:min(720px,calc(100vw - 28px));max-width:none;max-height:90dvh;
+  padding:0;border:2px solid var(--green);border-radius:26px;overflow:visible;
+  color:#153f34;background:linear-gradient(135deg,#fffdf7 0%,#fff6e5 100%);
+  box-shadow:0 24px 80px #001c1766;
+}
+.delivery-notice-dialog::backdrop{background:#171b18a8;backdrop-filter:blur(5px)}
+.delivery-notice{position:relative;padding:clamp(28px,5vw,52px);text-align:center}
+.delivery-notice-close{
+  position:absolute;right:16px;top:14px;width:42px;height:42px;border-radius:50%;
+  border:1.5px solid #9a927e;background:#fffdf7;color:#172c25;
+  font-size:29px;line-height:1;cursor:pointer
+}
+.delivery-scooter{
+  width:clamp(90px,17vw,132px);height:clamp(90px,17vw,132px);margin:0 auto 12px;
+  display:grid;place-items:center;border-radius:50%;background:#edf4d0;
+  font-size:clamp(48px,8vw,72px)
+}
+.delivery-eyebrow{margin:0 0 8px;color:#6a8c32;font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase}
+.delivery-notice h2{
+  margin:0;color:var(--green);font-family:'Playfair Display',Georgia,serif;
+  font-size:clamp(34px,6vw,54px);line-height:1.06;font-weight:800
+}
+.delivery-notice h2 em{color:#f45a0a;font-style:normal}
+.delivery-intro{margin:18px 0 24px;color:#263b34;font-size:clamp(16px,2.5vw,21px);line-height:1.5}
+.delivery-ownly-message{
+  display:flex;align-items:center;gap:20px;text-align:left;
+  padding:clamp(16px,3vw,24px);border-radius:22px;background:#eff4cf
+}
+.delivery-cutlery{flex:0 0 54px;text-align:center;color:var(--green);font-size:36px}
+.delivery-ownly-message p{margin:0;color:#183d32;font-size:clamp(16px,2.5vw,21px);line-height:1.45}
+.delivery-ownly-message strong{color:#f45a0a;font-weight:800}
+.delivery-ownly-message b{color:var(--green);font-weight:800}
+@media(max-width:520px){
+  .delivery-notice{padding:54px 18px 22px}
+  .delivery-notice-close{right:10px;top:9px;width:36px;height:36px}
+  .delivery-ownly-message{gap:10px;padding:15px 12px}
+  .delivery-cutlery{flex-basis:36px;font-size:27px}
+}
