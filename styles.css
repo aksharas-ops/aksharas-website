@@ -1559,3 +1559,61 @@ body{
  .benefits span{font-size:12px !important}
  .benefits>i{display:none !important}
 }
+
+
+/* V41 – precise desktop alignment to the approved homepage prototype */
+@media(min-width:681px){
+  .hero{
+    grid-template-columns:minmax(0,44%) minmax(0,56%) !important;
+    min-height:clamp(410px,26vw,545px) !important;
+  }
+  .hero-copy{
+    padding:clamp(28px,3.4vw,66px) 2.2vw clamp(26px,3vw,48px) 10.5% !important;
+    background-color:#fff8e9 !important;
+    background-image:url("assets/hero-prototype-ornaments.svg") !important;
+    background-size:100% 100% !important;
+    background-position:left top !important;
+    background-repeat:no-repeat !important;
+  }
+  .hero h1{
+    font-size:clamp(39px,3.45vw,72px) !important;
+    line-height:1.02 !important;
+    letter-spacing:-1.35px !important;
+    margin:0 0 12px !important;
+    max-width:100% !important;
+  }
+  .hero .green-rule{margin:0 0 10px !important}
+  .hero .green-rule:after{
+    width:clamp(100px,11vw,220px) !important;
+    height:6px !important;
+    margin:0 0 16px clamp(38px,4vw,76px) !important;
+  }
+  .hero-copy>p{
+    font-size:clamp(16px,1.22vw,25px) !important;
+    line-height:1.42 !important;
+    font-weight:600 !important;
+    max-width:100% !important;
+    margin:0 0 20px !important;
+  }
+  .hero-buttons{gap:clamp(12px,1.5vw,30px) !important}
+  .hero-buttons .order-btn,.hero-buttons .party-outline{
+    min-height:clamp(48px,3.65vw,76px) !important;
+    padding:clamp(10px,.95vw,20px) clamp(18px,1.65vw,34px) !important;
+    font-size:clamp(13px,1.02vw,21px) !important;
+  }
+  .hero-visual{
+    min-height:clamp(410px,26vw,545px) !important;
+    border-left:clamp(10px,1.25vw,24px) solid #f36b00 !important;
+    border-radius:clamp(120px,13vw,265px) 0 0 clamp(120px,13vw,265px) !important;
+  }
+  .hero-visual img{object-position:center center !important}
+  .hero-visual .slider-dots{bottom:clamp(12px,1.3vw,25px) !important}
+}
+@media(min-width:681px) and (max-width:1120px){
+  .hero-copy{padding-left:7% !important;padding-right:2% !important}
+  .hero h1{font-size:clamp(36px,4.05vw,48px) !important}
+  .hero-copy>p{font-size:15px !important}
+}
+@media(max-width:680px){
+  .hero-copy{background-image:none !important;background-color:#fff8e9 !important}
+}

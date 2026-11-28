@@ -129,7 +129,7 @@
   const start = () => {
     stop();
     if (!reducedMotion && !document.hidden) {
-      timer = window.setInterval(() => show(active + 1), 5000);
+      timer = window.setInterval(() => show(active + 1), 9000);
     }
   };
 
