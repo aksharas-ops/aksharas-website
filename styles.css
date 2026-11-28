@@ -1000,7 +1000,7 @@ body{
   margin:0;color:var(--green);font-family:'Playfair Display',Georgia,serif;
   font-size:clamp(34px,6vw,54px);line-height:1.06;font-weight:800
 }
-.delivery-notice h2 em{color:#f45a0a;font-style:normal}
+.delivery-notice h2 em{color:#00533f;font-style:normal}
 .delivery-intro{margin:18px 0 24px;color:#263b34;font-size:clamp(16px,2.5vw,21px);line-height:1.5}
 .delivery-ownly-message{
   display:flex;align-items:center;gap:20px;text-align:left;
@@ -1016,3 +1016,197 @@ body{
   .delivery-ownly-message{gap:10px;padding:15px 12px}
   .delivery-cutlery{flex-basis:36px;font-size:27px}
 }
+
+
+/* V35: Rebuild the Order Online popup to match the approved wide prototype. */
+.delivery-notice-dialog{
+  box-sizing:border-box;
+  width:min(1100px,calc(100vw - 48px));
+  max-width:none;
+  max-height:calc(100dvh - 48px);
+  padding:0;
+  overflow:hidden;
+  border:3px solid #075b45;
+  border-radius:48px;
+  color:#073f32;
+  background:radial-gradient(ellipse at 50% 45%,#fffdf6 0%,#fff9ed 72%,#fbf1df 100%);
+  box-shadow:0 24px 80px rgba(0,25,18,.38);
+}
+.delivery-notice-dialog::backdrop{
+  background:rgba(20,22,19,.58);
+  backdrop-filter:blur(7px);
+}
+.delivery-notice{
+  position:relative;
+  box-sizing:border-box;
+  width:100%;
+  padding:48px 64px 54px;
+  text-align:center;
+  isolation:isolate;
+}
+.delivery-notice-close{
+  position:absolute;
+  z-index:5;
+  top:24px;
+  right:26px;
+  width:58px;
+  height:58px;
+  border:3px solid #9c9686;
+  border-radius:50%;
+  background:rgba(255,253,247,.9);
+  color:#111;
+  font-size:40px;
+  line-height:1;
+  font-weight:500;
+  cursor:pointer;
+}
+.delivery-scooter{
+  width:344px;
+  height:168px;
+  margin:0 auto 12px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  border-radius:190px 190px 0 0;
+  background:#edf5c9;
+  color:#005541;
+  overflow:hidden;
+}
+.delivery-scooter svg{width:260px;height:150px;display:block}
+.delivery-eyebrow{display:none}
+.delivery-notice h2{
+  position:relative;
+  z-index:1;
+  margin:16px 0 24px;
+  color:#00533f;
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:clamp(48px,5.2vw,72px);
+  line-height:1.02;
+  letter-spacing:-1.4px;
+  font-weight:800;
+}
+.delivery-notice h2 em{color:#00533f;font-style:normal}
+.delivery-notice h2::before,
+.delivery-notice h2::after{
+  content:"";
+  position:absolute;
+  top:22%;
+  width:58px;
+  height:52px;
+  background:
+    linear-gradient(48deg,transparent 44%,#f45a0a 46% 52%,transparent 54%) 0 0/100% 100%,
+    linear-gradient(12deg,transparent 44%,#f45a0a 46% 52%,transparent 54%) 0 0/100% 100%;
+  opacity:.95;
+}
+.delivery-notice h2::before{left:9%;transform:rotate(-12deg)}
+.delivery-notice h2::after{right:9%;transform:scaleX(-1) rotate(-12deg)}
+.delivery-intro{
+  margin:26px 0 38px;
+  color:#111;
+  font-size:clamp(22px,2.55vw,36px);
+  line-height:1.35;
+  font-weight:400;
+}
+.delivery-ownly-message{
+  display:grid;
+  grid-template-columns:150px 1fr;
+  align-items:center;
+  gap:34px;
+  min-height:194px;
+  box-sizing:border-box;
+  padding:24px 38px;
+  border-radius:48px;
+  background:linear-gradient(110deg,#f0f5c9 0%,#eff4c8 100%);
+  text-align:left;
+}
+.delivery-cutlery{
+  height:110px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-right:3px solid #cbd5a0;
+  color:#00604a;
+}
+.delivery-cutlery svg{width:72px;height:100px}
+.delivery-ownly-message p{
+  margin:0;
+  color:#111;
+  font-size:clamp(23px,2.8vw,39px);
+  line-height:1.32;
+  font-weight:400;
+}
+.delivery-ownly-message strong{color:#f45a0a;font-weight:800}
+.delivery-ownly-message b{color:#00533f;font-weight:800}
+.delivery-leaf{
+  position:absolute;
+  z-index:-1;
+  width:190px;
+  height:190px;
+  opacity:.36;
+  pointer-events:none;
+  background-repeat:no-repeat;
+  background-size:contain;
+}
+.delivery-leaf-top{
+  top:0;left:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cg fill='%23c6d78c'%3E%3Cellipse cx='35' cy='24' rx='12' ry='31' transform='rotate(-48 35 24)'/%3E%3Cellipse cx='68' cy='43' rx='12' ry='30' transform='rotate(-55 68 43)'/%3E%3Cellipse cx='102' cy='58' rx='11' ry='29' transform='rotate(-62 102 58)'/%3E%3Cellipse cx='30' cy='70' rx='12' ry='29' transform='rotate(-20 30 70)'/%3E%3Cellipse cx='56' cy='98' rx='12' ry='29' transform='rotate(-25 56 98)'/%3E%3Cellipse cx='84' cy='124' rx='11' ry='27' transform='rotate(-35 84 124)'/%3E%3C/g%3E%3Cpath d='M8 4Q65 55 112 146' fill='none' stroke='%23c6d78c' stroke-width='5'/%3E%3C/svg%3E");
+}
+.delivery-leaf-bottom{
+  right:0;bottom:0;transform:rotate(180deg);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cg fill='%23c6d78c'%3E%3Cellipse cx='35' cy='24' rx='12' ry='31' transform='rotate(-48 35 24)'/%3E%3Cellipse cx='68' cy='43' rx='12' ry='30' transform='rotate(-55 68 43)'/%3E%3Cellipse cx='102' cy='58' rx='11' ry='29' transform='rotate(-62 102 58)'/%3E%3Cellipse cx='30' cy='70' rx='12' ry='29' transform='rotate(-20 30 70)'/%3E%3Cellipse cx='56' cy='98' rx='12' ry='29' transform='rotate(-25 56 98)'/%3E%3Cellipse cx='84' cy='124' rx='11' ry='27' transform='rotate(-35 84 124)'/%3E%3C/g%3E%3Cpath d='M8 4Q65 55 112 146' fill='none' stroke='%23c6d78c' stroke-width='5'/%3E%3C/svg%3E");
+}
+@media(max-width:800px){
+  .delivery-notice-dialog{width:calc(100vw - 28px);max-height:calc(100dvh - 28px);border-radius:30px}
+  .delivery-notice{padding:36px 26px 30px}
+  .delivery-notice-close{top:12px;right:12px;width:44px;height:44px;font-size:30px;border-width:2px}
+  .delivery-scooter{width:230px;height:112px;margin-bottom:8px}
+  .delivery-scooter svg{width:190px;height:110px}
+  .delivery-notice h2{font-size:clamp(36px,7vw,54px);margin:12px 0 16px;letter-spacing:-.6px}
+  .delivery-notice h2::before,.delivery-notice h2::after{width:34px;height:34px;top:20%}
+  .delivery-notice h2::before{left:1%}.delivery-notice h2::after{right:1%}
+  .delivery-intro{font-size:clamp(16px,3vw,22px);margin:14px 0 22px}
+  .delivery-ownly-message{grid-template-columns:78px 1fr;gap:16px;min-height:120px;padding:16px 18px;border-radius:28px}
+  .delivery-cutlery{height:80px;border-right-width:2px}
+  .delivery-cutlery svg{width:52px;height:74px}
+  .delivery-ownly-message p{font-size:clamp(16px,3vw,22px)}
+  .delivery-leaf{width:120px;height:120px}
+}
+@media(max-width:480px){
+  .delivery-notice{padding:48px 16px 20px}
+  .delivery-scooter{width:150px;height:78px}
+  .delivery-scooter svg{width:130px;height:76px}
+  .delivery-notice h2{font-size:34px}
+  .delivery-notice h2::before,.delivery-notice h2::after{display:none}
+  .delivery-intro{font-size:15px;margin:12px 0 18px}
+  .delivery-ownly-message{grid-template-columns:48px 1fr;gap:10px;padding:13px 10px;border-radius:20px}
+  .delivery-cutlery{height:70px}
+  .delivery-cutlery svg{width:38px;height:64px}
+  .delivery-ownly-message p{font-size:14px;line-height:1.35}
+  .delivery-leaf{width:82px;height:82px}
+}
+
+
+/* V36: Reduce Party Orders banner text by 2px while preserving layout. */
+.party-heading h2{font-size:clamp(36px,calc(3.1vw - 2px),46px)}
+.party-heading p{font-size:clamp(15px,calc(1.35vw - 2px),19px)}
+.occasions small{font-size:clamp(14px,calc(1.25vw - 2px),18px)}
+.enquire-btn{font-size:clamp(14px,calc(1.2vw - 2px),17px)}
+@media(max-width:1120px) and (min-width:901px){
+  .party-heading h2{font-size:34px}
+  .party-heading p{font-size:14px}
+  .occasions small{font-size:13px}
+  .enquire-btn{font-size:13px}
+}
+@media(max-width:900px) and (min-width:681px){
+  .party-heading h2{font-size:30px}
+  .party-heading p{font-size:13px}
+  .occasions small{font-size:11px}
+  .enquire-btn{font-size:11px}
+}
+@media(max-width:680px){
+  .party-heading h2{font-size:30px}
+  .party-heading p{font-size:13px}
+  .occasions small{font-size:10px}
+  .enquire-btn{font-size:13px}
+}
+@media(max-width:380px){.occasions small{font-size:9px}}

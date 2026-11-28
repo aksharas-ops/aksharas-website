@@ -166,13 +166,34 @@
 
 <dialog class="delivery-notice-dialog" id="order-online-popup" aria-labelledby="delivery-notice-title">
   <div class="delivery-notice">
+    <span class="delivery-leaf delivery-leaf-top" aria-hidden="true"></span>
+    <span class="delivery-leaf delivery-leaf-bottom" aria-hidden="true"></span>
     <button class="delivery-notice-close" type="button" aria-label="Close">×</button>
-    <div class="delivery-scooter" aria-hidden="true">🛵</div>
-    <p class="delivery-eyebrow">A little update from Aksharas</p>
+    <div class="delivery-scooter" aria-hidden="true">
+      <svg viewBox="0 0 260 150" role="presentation">
+        <g fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M42 89h28l15-21h45l18 21h34l18 17h-13"/>
+          <path d="M86 67l12-24h43l15 24M99 43V31h39v12"/>
+          <path d="M110 31c0-13 10-23 23-23s23 10 23 23"/>
+          <path d="M75 90l-8 24h-18M177 89l-9 25"/>
+          <path d="M78 114h112"/>
+          <circle cx="85" cy="119" r="15"/>
+          <circle cx="179" cy="119" r="15"/>
+          <path d="M25 65h31M15 81h28M31 97h24"/>
+        </g>
+      </svg>
+    </div>
     <h2 id="delivery-notice-title">Home Delivery<br><em>Coming Soon!</em></h2>
     <p class="delivery-intro">We’re getting ready to bring Aksharas to your home.</p>
     <div class="delivery-ownly-message">
-      <span class="delivery-cutlery" aria-hidden="true">♨</span>
+      <div class="delivery-cutlery" aria-hidden="true">
+        <svg viewBox="0 0 70 100" role="presentation">
+          <g fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 10v32m-9-32v17c0 8 18 8 18 0V10M17 42v48"/>
+            <path d="M48 10c-8 0-12 9-12 21v10h24V31c0-12-4-21-12-21zM48 41v49"/>
+          </g>
+        </svg>
+      </div>
       <p>Until then, you can order via <strong>Ownly</strong> and enjoy your food at <b>restaurant pickup prices.</b></p>
     </div>
   </div>
