@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 560" fill="none">
+ <defs>
+  <pattern id="kolam" width="92" height="92" patternUnits="userSpaceOnUse" opacity=".22">
+   <path d="M46 5C68 27 68 65 46 87 24 65 24 27 46 5ZM5 46C27 24 65 24 87 46 65 68 27 68 5 46ZM20 20L72 72M72 20L20 72" stroke="#d9c58b" stroke-width="1.3"/>
+   <circle cx="46" cy="46" r="13" stroke="#d9c58b" stroke-width="1.2"/>
+  </pattern>
+ </defs>
+ <path d="M0 0H520V560H0Z" fill="url(#kolam)" opacity=".28"/>
+ <!-- hanging brass lamp -->
+ <g stroke="#c88b19" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity=".92">
+  <path d="M120 0V52M116 52H124M120 52V75M112 75Q120 83 128 75M105 82H135L129 98H111Z"/>
+  <path d="M109 98Q120 111 131 98M101 111Q120 125 139 111M108 111L112 128H128L132 111"/>
+  <path d="M120 129V144"/>
+ </g>
+ <path d="M120 87Q114 77 120 70Q126 77 120 87Z" fill="#ff9d20" opacity=".9"/>
+ <!-- temple line-art at lower left -->
+ <g stroke="#d8a65a" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" opacity=".65">
+  <path d="M18 476H206M29 476V365H194V476M20 365H203L111 302Z"/>
+  <path d="M43 365V337H181V365M58 337V321H166V337M76 321V309H149V321M94 309V298H131V309"/>
+  <path d="M85 476V422Q111 394 137 422V476M100 476V435Q111 420 122 435V476"/>
+  <path d="M42 390H181M42 414H181M42 440H181M42 458H181"/>
+  <path d="M57 390L72 374L87 390M140 390L155 374L170 390M57 414L72 398L87 414M140 414L155 398L170 414"/>
+  <path d="M27 476Q42 460 56 476M165 476Q180 460 195 476"/>
+ </g>
+ <path d="M0 500Q60 470 120 500T240 500" stroke="#8fbd42" stroke-width="7" opacity=".45"/>
+ <path d="M0 522Q60 492 120 522T240 522" stroke="#c7d978" stroke-width="11" opacity=".5"/>
+ <!-- leafy upper corner -->
+ <g fill="#8fb83f" opacity=".28">
+  <path d="M0 0C52 2 83 28 100 62 60 54 25 35 0 0Z"/>
+  <path d="M0 18C30 22 52 44 64 78 31 65 10 43 0 18Z"/>
+  <path d="M18 0C46 0 68 12 86 34 55 32 33 19 18 0Z"/>
+ </g>
+</svg>
