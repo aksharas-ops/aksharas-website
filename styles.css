@@ -1665,3 +1665,17 @@ body{
 @media (max-width:680px){
   .hero-copy{background-image:none!important;background-color:#fff8e9!important;padding-left:7%!important}
 }
+
+/* V45: keep the approved three-line hero headline and center-align the hero copy */
+.hero-copy{align-items:center;text-align:center}
+.hero h1{text-align:center;width:100%}
+.green-rule{margin:14px auto 11px}
+.hero-copy>p{margin-left:auto;margin-right:auto}
+.hero-buttons{justify-content:center}
+@media(max-width:760px){
+  .hero-copy{align-items:center;text-align:center}
+  .hero h1{text-align:center}
+  .green-rule{margin:10px auto 8px}
+  .hero-copy>p{margin-left:auto;margin-right:auto}
+  .hero-buttons{justify-content:center}
+}
