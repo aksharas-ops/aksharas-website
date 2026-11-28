@@ -1210,3 +1210,158 @@ body{
   .enquire-btn{font-size:13px}
 }
 @media(max-width:380px){.occasions small{font-size:9px}}
+
+/* V37 – Hero refreshed to match the approved Aksharas traditional-theme prototype */
+.hero{
+  max-width:calc(var(--content) - 36px);
+  min-height:clamp(390px,31vw,555px);
+  grid-template-columns:minmax(0,43%) minmax(0,57%);
+  background:#fff8e9;
+  border-radius:0;
+  overflow:hidden;
+  box-shadow:none;
+  position:relative;
+}
+.hero-copy{
+  padding:clamp(30px,3.4vw,66px) clamp(24px,3vw,54px) clamp(30px,3vw,52px) clamp(44px,7.8vw,170px);
+  justify-content:center;
+  background:
+    radial-gradient(ellipse at 18% 14%,rgba(255,224,153,.22),transparent 40%),
+    linear-gradient(110deg,#fff8e9 0%,#fff8e9 76%,rgba(255,248,233,.94) 100%);
+  overflow:hidden;
+}
+.hero-copy:before{
+  content:"";position:absolute;z-index:0;pointer-events:none;
+  left:-52px;bottom:-42px;top:auto;right:auto;width:235px;height:265px;
+  border:0;border-radius:0;transform:none;opacity:.20;
+  background:url("assets/temple-banana-motif.svg") left bottom/contain no-repeat;
+}
+.hero-copy:after{
+  content:"";position:absolute;z-index:0;pointer-events:none;
+  left:-30px;top:-78px;bottom:auto;width:160px;height:180px;
+  border:0;border-radius:0;transform:rotate(8deg);opacity:.5;
+  background:radial-gradient(ellipse at 30% 20%,#8ebd39 0 16%,transparent 17%),radial-gradient(ellipse at 58% 8%,#b9d95b 0 18%,transparent 19%),radial-gradient(ellipse at 76% 28%,#e4c65b 0 13%,transparent 14%);
+}
+.hero-copy>*{position:relative;z-index:1}
+.hero h1{font-size:clamp(38px,3.75vw,68px);line-height:1.04;letter-spacing:-1.2px;max-width:720px}
+.green-rule{width:72px;height:5px;margin:17px 0 13px}
+.hero-copy>p{font-size:clamp(16px,1.3vw,24px);line-height:1.48;max-width:540px;margin-bottom:22px;color:#4b321c}
+.hero-buttons{gap:18px}
+.hero-buttons .order-btn{font-size:clamp(14px,1.05vw,19px);padding:15px 26px;min-height:58px;border-radius:36px}
+.party-outline{font-size:clamp(14px,1.02vw,18px);padding:11px 20px;min-height:58px;border-width:2px;border-radius:36px;background:rgba(255,252,244,.55)}
+.hero-visual{
+  min-height:clamp(390px,31vw,555px);
+  border-left:11px solid var(--orange);
+  border-radius:clamp(105px,12vw,210px) 0 0 clamp(105px,12vw,210px);
+  background:#5a341b;
+  overflow:hidden;
+}
+.hero-visual img{object-fit:cover;object-position:center center}
+.slider-dots{bottom:24px;gap:12px}
+.slider-dots button{width:12px;height:12px;border:0;border-radius:50%;padding:0;background:#fff;box-shadow:0 1px 5px #0005;cursor:pointer}
+.slider-dots button.selected{background:var(--orange)}
+.benefits{
+  max-width:calc(var(--content) - 36px);
+  min-height:clamp(82px,6vw,116px);
+  margin:0 auto 24px;
+  padding:13px clamp(28px,5.5vw,110px);
+  gap:clamp(14px,2.3vw,42px);
+  background:linear-gradient(105deg,#004b3c 0%,#005542 55%,#004536 100%);
+  color:#fff;
+  border:2px solid #e4b64b;
+  border-top:3px solid #f3d47b;
+  border-radius:0 0 72px 72px;
+  box-shadow:0 10px 24px rgba(0,58,44,.14);
+}
+.benefits div{gap:16px;font-size:clamp(27px,2.2vw,42px);color:#e9c45e}
+.benefits span{font-size:clamp(14px,1.15vw,21px);line-height:1.18;color:#fff;font-weight:800}
+.benefits>i{height:48px;border-left:1px solid rgba(240,211,134,.8)}
+@media(max-width:1120px) and (min-width:681px){
+ .hero{min-height:360px;grid-template-columns:minmax(0,44%) minmax(0,56%)}
+ .hero-copy{padding-left:clamp(28px,4vw,58px)}
+ .hero h1{font-size:clamp(34px,4vw,48px)}
+ .hero-copy>p{font-size:15px}
+ .hero-visual{min-height:360px;border-radius:90px 0 0 90px}
+ .benefits{padding-inline:4%;gap:12px}
+ .benefits div{gap:9px}
+ .benefits span{font-size:13px}
+}
+@media(max-width:680px){
+ .hero{max-width:100%;display:flex;flex-direction:column;min-height:0;border-radius:0}
+ .hero-copy{padding:34px 7% 26px;min-height:300px}
+ .hero-copy:before{left:-45px;bottom:-70px;width:185px;height:210px;opacity:.15}
+ .hero-copy:after{width:110px;height:120px;top:-55px;left:-20px}
+ .hero h1{font-size:clamp(34px,9vw,44px);line-height:1.04}
+ .hero-copy>p{font-size:15px;max-width:360px;margin-bottom:16px}
+ .green-rule{margin:12px 0 9px;width:58px;height:4px}
+ .hero-buttons{gap:9px}
+ .hero-buttons .order-btn,.party-outline{font-size:12px;padding:10px 13px;min-height:44px}
+ .hero-visual{width:100%;min-height:0;height:auto;aspect-ratio:1.48/1;border:0;border-top:7px solid var(--orange);border-radius:48px 0 0 0}
+ .slider-dots{bottom:13px}
+ .benefits{max-width:100%;margin:0 auto 18px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));padding:17px 7%;gap:15px 12px;border-radius:0 0 32px 32px;min-height:0}
+ .benefits div{justify-content:flex-start;gap:9px;font-size:24px;padding-left:5px}
+ .benefits span{font-size:12px}
+ .benefits>i{display:none}
+}
+
+
+/* V38: Reduce the Home Delivery popup to approximately 60% of the approved prototype size. */
+.delivery-notice-dialog{
+  width:min(660px,calc(100vw - 40px));
+  max-height:calc(100dvh - 40px);
+  border-width:2px;
+  border-radius:30px;
+}
+.delivery-notice{padding:29px 38px 32px}
+.delivery-notice-close{
+  top:14px;right:15px;width:36px;height:36px;
+  border-width:2px;font-size:25px;
+}
+.delivery-scooter{
+  width:206px;height:101px;margin-bottom:7px;
+  border-radius:114px 114px 0 0;
+}
+.delivery-scooter svg{width:156px;height:90px}
+.delivery-notice h2{
+  margin:10px 0 14px;font-size:clamp(34px,4vw,43px);
+  letter-spacing:-.8px;
+}
+.delivery-notice h2::before,.delivery-notice h2::after{width:35px;height:32px}
+.delivery-intro{margin:14px 0 22px;font-size:clamp(16px,1.8vw,22px);line-height:1.35}
+.delivery-ownly-message{
+  grid-template-columns:90px 1fr;gap:20px;min-height:116px;
+  padding:14px 23px;border-radius:29px;
+}
+.delivery-cutlery{height:66px;border-right-width:2px}
+.delivery-cutlery svg{width:44px;height:62px}
+.delivery-ownly-message p{font-size:clamp(16px,1.9vw,23px);line-height:1.32}
+.delivery-leaf{width:114px;height:114px}
+
+@media(max-width:800px){
+  .delivery-notice-dialog{width:min(560px,calc(100vw - 28px));max-height:calc(100dvh - 28px);border-radius:24px}
+  .delivery-notice{padding:34px 24px 24px}
+  .delivery-notice-close{top:10px;right:10px;width:34px;height:34px;font-size:23px}
+  .delivery-scooter{width:170px;height:84px}
+  .delivery-scooter svg{width:132px;height:78px}
+  .delivery-notice h2{font-size:clamp(30px,6vw,38px);margin:9px 0 12px}
+  .delivery-notice h2::before,.delivery-notice h2::after{width:28px;height:27px}
+  .delivery-intro{font-size:clamp(15px,2.7vw,18px);margin:12px 0 18px}
+  .delivery-ownly-message{grid-template-columns:62px 1fr;gap:12px;min-height:92px;padding:12px 14px;border-radius:22px}
+  .delivery-cutlery{height:58px}
+  .delivery-cutlery svg{width:38px;height:54px}
+  .delivery-ownly-message p{font-size:clamp(14px,2.7vw,18px)}
+  .delivery-leaf{width:90px;height:90px}
+}
+@media(max-width:480px){
+  .delivery-notice{padding:42px 14px 17px}
+  .delivery-scooter{width:126px;height:66px}
+  .delivery-scooter svg{width:105px;height:62px}
+  .delivery-notice h2{font-size:29px;line-height:1.04}
+  .delivery-notice h2::before,.delivery-notice h2::after{display:none}
+  .delivery-intro{font-size:14px;margin:10px 0 14px}
+  .delivery-ownly-message{grid-template-columns:42px 1fr;gap:9px;padding:11px 9px;border-radius:17px}
+  .delivery-cutlery{height:52px}
+  .delivery-cutlery svg{width:31px;height:48px}
+  .delivery-ownly-message p{font-size:13px;line-height:1.3}
+  .delivery-leaf{width:68px;height:68px}
+}
