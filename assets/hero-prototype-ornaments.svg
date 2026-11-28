@@ -1,26 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 560" fill="none">
- <!-- hanging brass lamp -->
- <g stroke="#c88b19" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity=".92">
-  <path d="M120 0V52M116 52H124M120 52V75M112 75Q120 83 128 75M105 82H135L129 98H111Z"/>
-  <path d="M109 98Q120 111 131 98M101 111Q120 125 139 111M108 111L112 128H128L132 111"/>
-  <path d="M120 129V144"/>
- </g>
- <path d="M120 87Q114 77 120 70Q126 77 120 87Z" fill="#ff9d20" opacity=".9"/>
- <!-- temple line-art at lower left -->
- <g stroke="#d8a65a" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" opacity=".65">
-  <path d="M18 476H206M29 476V365H194V476M20 365H203L111 302Z"/>
-  <path d="M43 365V337H181V365M58 337V321H166V337M76 321V309H149V321M94 309V298H131V309"/>
-  <path d="M85 476V422Q111 394 137 422V476M100 476V435Q111 420 122 435V476"/>
-  <path d="M42 390H181M42 414H181M42 440H181M42 458H181"/>
-  <path d="M57 390L72 374L87 390M140 390L155 374L170 390M57 414L72 398L87 414M140 414L155 398L170 414"/>
-  <path d="M27 476Q42 460 56 476M165 476Q180 460 195 476"/>
- </g>
- <path d="M0 500Q60 470 120 500T240 500" stroke="#8fbd42" stroke-width="7" opacity=".45"/>
- <path d="M0 522Q60 492 120 522T240 522" stroke="#c7d978" stroke-width="11" opacity=".5"/>
- <!-- leafy upper corner -->
- <g fill="#8fb83f" opacity=".28">
-  <path d="M0 0C52 2 83 28 100 62 60 54 25 35 0 0Z"/>
-  <path d="M0 18C30 22 52 44 64 78 31 65 10 43 0 18Z"/>
-  <path d="M18 0C46 0 68 12 86 34 55 32 33 19 18 0Z"/>
- </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500" fill="none">
+  <defs><linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d7a13b"/><stop offset="1" stop-color="#b77b22"/></linearGradient></defs>
+  <g fill="#8eae42" opacity=".22">
+    <path d="M0 0C68 5 108 35 135 91 78 77 31 44 0 0Z"/><path d="M0 22C39 33 68 67 82 111 39 91 11 59 0 22Z"/><path d="M28 0C76 2 111 21 139 54 91 48 54 27 28 0Z"/>
+    <path d="M5 0L92 91" stroke="#829d3c" stroke-width="2" fill="none"/>
+  </g>
+  <g stroke="url(#gold)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity=".95">
+    <path d="M92 0V78M87 78H97M92 78V101"/><path d="M78 104H106L100 118H84Z"/><path d="M82 118Q92 131 102 118M70 133Q92 147 114 133"/>
+    <path d="M77 133L83 151H101L107 133M92 151V162M84 102Q92 91 100 102"/>
+  </g>
+  <path d="M92 112Q82 100 92 89Q102 100 92 112Z" fill="#f5a623" opacity=".9"/>
+  <g stroke="#d7a45b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity=".36">
+    <path d="M12 454H225M22 454V310H213V454M8 310H228L118 244Z"/>
+    <path d="M37 310V279H198V310M54 279V258H181V279M72 258V241H163V258M91 241V226H145V241"/>
+    <path d="M103 226V210H133V226M108 210V194H128V210"/>
+    <path d="M89 454V381Q118 342 147 381V454M105 454V397Q118 380 131 397V454"/>
+    <path d="M35 339H201M35 369H201M35 400H201M35 429H201"/>
+    <path d="M48 339L66 319L84 339M151 339L169 319L187 339M48 369L66 349L84 369M151 369L169 349L187 369M48 400L66 380L84 400M151 400L169 380L187 400"/>
+    <path d="M23 310L39 294L55 310M181 310L197 294L213 310M18 454Q36 435 54 454M180 454Q198 435 216 454"/>
+  </g>
+  <path d="M0 466C52 440 96 490 150 466S236 451 275 476" stroke="#9fbd50" stroke-width="8" opacity=".32"/>
+  <path d="M0 483C58 456 102 505 162 482S236 468 278 491" stroke="#c7d978" stroke-width="12" opacity=".36"/>
 </svg>
