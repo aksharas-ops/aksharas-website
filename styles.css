@@ -1617,3 +1617,31 @@ body{
 @media(max-width:680px){
   .hero-copy{background-image:none !important;background-color:#fff8e9 !important}
 }
+
+
+/* V42 – rebuild hero background and alignment against the approved prototype */
+@media (min-width:681px){
+  .hero{width:100%!important;max-width:1880px!important;margin:0 auto!important;display:grid!important;grid-template-columns:minmax(0,42%) minmax(0,58%)!important;min-height:clamp(390px,27vw,535px)!important;background:#fff8e9!important;overflow:hidden!important}
+  .hero-copy{box-sizing:border-box!important;min-width:0!important;padding:34px 22px 30px 25%!important;justify-content:center!important;align-items:flex-start!important;background-color:#fff8e9!important;background-image:url("assets/hero-prototype-ornaments.svg")!important;background-repeat:no-repeat!important;background-position:left center!important;background-size:100% 100%!important;overflow:hidden!important}
+  .hero-copy:before,.hero-copy:after{display:none!important}
+  .hero h1{font-size:clamp(38px,3.35vw,68px)!important;line-height:1.02!important;letter-spacing:-1.25px!important;max-width:100%!important;margin:0 0 9px!important;white-space:normal!important}
+  .hero .green-rule{width:48px!important;height:4px!important;margin:0 0 12px!important;background:#86b83e!important}
+  .hero .green-rule:after{display:none!important}
+  .hero-copy>p{max-width:100%!important;font-size:clamp(15px,1.12vw,22px)!important;line-height:1.42!important;font-weight:500!important;margin:0 0 18px!important;color:#3f2c1d!important}
+  .hero-buttons{display:flex!important;flex-wrap:nowrap!important;gap:14px!important}
+  .hero-buttons .order-btn,.hero-buttons .party-outline{min-height:clamp(46px,3.4vw,68px)!important;padding:11px clamp(16px,1.5vw,28px)!important;font-size:clamp(12px,.92vw,18px)!important;line-height:1.15!important;border-radius:999px!important;white-space:nowrap!important}
+  .hero-visual{min-width:0!important;min-height:clamp(390px,27vw,535px)!important;border:0!important;border-left:clamp(10px,1.1vw,20px) solid #f36b00!important;border-radius:clamp(115px,12vw,230px) 0 0 clamp(115px,12vw,230px)!important;overflow:hidden!important;background:#e8d8bd!important}
+  .hero-visual img{object-fit:cover!important;object-position:center center!important}
+  .hero-visual .slider-dots{bottom:clamp(12px,1.25vw,22px)!important}
+}
+@media (min-width:681px) and (max-width:1120px){
+ .hero{grid-template-columns:minmax(0,43%) minmax(0,57%)!important}
+ .hero-copy{padding-left:19%!important;padding-right:16px!important}
+ .hero h1{font-size:clamp(34px,4vw,46px)!important}
+ .hero-copy>p{font-size:14px!important}
+ .hero-buttons .order-btn,.hero-buttons .party-outline{font-size:11px!important;padding-inline:12px!important}
+}
+@media(max-width:680px){
+ .hero-copy{background-color:#fff8e9!important;background-image:url("assets/hero-prototype-ornaments.svg")!important;background-size:100% 100%!important;background-position:left top!important}
+ .hero-copy:before,.hero-copy:after{display:none!important}
+}
